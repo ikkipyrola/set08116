@@ -25,7 +25,8 @@ void create_sierpinski(geometry &geom) {
   // Add first colour to the geometry
   colours.push_back(vec4(1.0f, 0.0f, 0.0f, 1.0f));
   // Add random points using distribution
-  for (auto i = 1; i < num_points; ++i) {
+  for (auto i = 1; i < num_points; ++i) 
+  {
     // *********************************
     // Add random point
 
