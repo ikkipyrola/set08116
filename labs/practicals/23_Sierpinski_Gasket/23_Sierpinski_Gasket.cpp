@@ -21,17 +21,25 @@ void triangle(const vector<vec3> &points, vector<vec3> &positions, vector<vec4> 
 void divide_triangle(const vector<vec3> &points, unsigned int count, vector<vec3> &positions, vector<vec4> &colours) {
   // *********************************
   // IF we have more divisions to do?
-
-    // Calculate new vertices to work on
-
-    // Divide new triangles
-
-
-
-
-
-
-
+	if (count > 0)
+	{
+		count--;
+		// Calculate new vertices to work on
+		auto m0 = (points[0] + points[1]) / 2.0f;
+		auto m1 = (points[0] + points[2]) / 2.0f;
+		auto m2 = (points[1] + points[2]) / 2.0f;
+		// Divide new triangles
+		//const vector<vec3> v {vec3(points[0], m1, m0), vec3(m1, points[2], m2), vec3(m0, m2, points[1])};
+		divide_triangle({ points[0], m1, m0 }, count, positions, colours);
+		divide_triangle({ m1, points[2], m2 }, count, positions, colours);
+		divide_triangle({ m0, m2, points[1] }, count, positions, colours);
+		// but when do i add the new vectices to the buffer?
+		// and how can i call divice_triangle with just ONE vector for points when points requirement must be size is 3
+	}
+	else
+	{
+		triangle(points, positions, colours);
+	}
   // *********************************
 }
 
