@@ -23,7 +23,7 @@ bool load_content() {
 
   // *********************************
   // Create mesh object here
-
+  m = mesh(geom);
   // *********************************
 
   // Load in shaders
