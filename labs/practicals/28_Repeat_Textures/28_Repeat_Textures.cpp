@@ -9,41 +9,43 @@ using namespace glm;
 mesh m;
 effect eff;
 target_camera cam;
-texture tex;
+texture tex, texNoMaps;
 
 bool load_content() {
   // Construct geometry object
   geometry geom;
   // Create triangle data
   // Positions
-  vector<vec3> positions{vec3(0.0f, 1.0f, 0.0f), vec3(-1.0f, -1.0f, 0.0f), vec3(1.0f, -1.0f, 0.0f)};
+  vector<vec3> positions{ vec3(-1.0, 1.0, 0.0), vec3(-1.0, -1.0, 0.0), vec3(1.0, -1.0, 0.0),
+						  vec3(1.0, -1.0, 0.0), vec3(1.0, 1.0, 0.0), vec3(-1.0, 1.0, 0.0) };
   // *********************************
   // Define texture coordinates for triangle
-
+  vector<vec3> tex_coords = positions;
   // *********************************
   // Add to the geometry
   geom.add_buffer(positions, BUFFER_INDEXES::POSITION_BUFFER);
   // *********************************
   // Add texture coordinate buffer to geometry
-
+  geom.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
   // *********************************
 
   // Create mesh object
   m = mesh(geom);
 
   // Load in texture shaders, !Note that are pulling in shader file from previous project!
-  eff.add_shader("31_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
-  eff.add_shader("31_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+  eff.add_shader("27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
 
   // *********************************
   // Build effect
-
+  eff.build();
   // Load texture "textures/sign.jpg"
-
+  tex = texture("textures/sign.jpg", true, false);
+  texNoMaps = texture("textures/sign.jpg", false, false);
   // *********************************
 
   // Set camera properties
-  cam.set_position(vec3(2.0f, 2.0f, 2.0f));
+  cam.set_position(vec3(0.0f, 0.0f, 6.0f));
   cam.set_target(vec3(0.0f, 0.0f, 0.0f));
   auto aspect = static_cast<float>(renderer::get_screen_width()) / static_cast<float>(renderer::get_screen_height());
   cam.set_projection(quarter_pi<float>(), aspect, 1.0f, 1000.0f);
@@ -73,9 +75,9 @@ bool render() {
 
   // *********************************
   // Bind texture to renderer
-
+  renderer::bind(tex, 0);
   // Set the texture value for the shader here
-
+  glUniform1i(eff.get_uniform_location("tex"), 0);
   // *********************************
 
   // Render the mesh

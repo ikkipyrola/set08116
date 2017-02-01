@@ -18,9 +18,9 @@ void divide_triangle(const vector<vec3> &points, int divisions, vector<vec3> &po
   if (divisions > 0) {
     // *********************************
     // Calculate new vertices to work on (Normalize each element!)
-	  auto v0 = (points[0] + points[1]) / (points[0] + points[1]).length;
-	  auto v1 = (points[0] + points[2]) / (points[0] + points[2]).length;
-	  auto v2 = (points[1] + points[2]) / (points[1] + points[2]).length;
+	  auto v0 = normalize(points[0] + points[1]);
+	  auto v1 = normalize(points[0] + points[2]);
+	  auto v2 = normalize(points[1] + points[2]);
     // Divide new triangles
       divide_triangle({ points[0], v0, v1 }, divisions-1, positions, colours);
 	  divide_triangle({ points[2], v1, v2 }, divisions-1, positions, colours);

@@ -91,7 +91,7 @@ bool render() {
   mat4 M;
   // *********************************
   // Get the model transform from the mesh
-
+  M = m.get_transform().get_transform_matrix();
   // *********************************
   // Create MVP matrix
   auto V = cam.get_view();
