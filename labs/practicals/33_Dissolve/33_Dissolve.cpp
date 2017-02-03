@@ -23,8 +23,8 @@ bool load_content() {
   m.get_transform().scale = vec3(10.0f);
 
   // Load in dissolve shader
-  eff.add_shader("36_Dissolve/dissolve.vert", GL_VERTEX_SHADER);
-  eff.add_shader("36_Dissolve/dissolve.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("33_Dissolve/dissolve.vert", GL_VERTEX_SHADER);
+  eff.add_shader("33_Dissolve/dissolve.frag", GL_FRAGMENT_SHADER);
 
   // Build effect
   eff.build();
@@ -72,13 +72,13 @@ bool render() {
 
   // *********************************
   // Set the dissolve_factor uniform value
-
+  glUniform1f(eff.get_uniform_location("dissolve_factor"), dissolve_factor);
   // Bind the two textures - use different index for each
-
-
+  renderer::bind(tex, 0);
+  renderer::bind(dissolve, 1);
   // Set the uniform values for textures - use correct index
-
-
+  glUniform1i(eff.get_uniform_location("tex"), 0);
+  glUniform1i(eff.get_uniform_location("dissolve"), 1);
   // *********************************
 
   // Set UV_scroll uniform, adds cool movent (Protip: This is a super easy way to do fire effects;))
@@ -88,6 +88,8 @@ bool render() {
 
   return true;
 }
+
+
 
 void main() {
   // Create application
