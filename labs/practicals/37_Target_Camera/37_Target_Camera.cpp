@@ -44,8 +44,8 @@ bool load_content() {
   tex = texture("textures/checker.png");
 
   // Load in shaders
-  eff.add_shader("27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
-  eff.add_shader("27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
 
   // Build effect
   eff.build();
@@ -61,23 +61,27 @@ bool update(float delta_time) {
   // *********************************
   // Use keyboard to change camera location
   // 1 - (50, 10, 50)
-
-
-
+	if(glfwGetKey(renderer::get_window(), GLFW_KEY_1))
+	{
+		cam.set_position(vec3(50.0f, 10.0f, 50.0f));
+	}
   // 2 - (-50, 10, 50)
-
-
-
+	if (glfwGetKey(renderer::get_window(), GLFW_KEY_2))
+	{
+		cam.set_position(vec3(-50.0f, 10.0f, 50.0f));
+	}
   // 3 - (-50, 10, -50)
-
-
-
+	if (glfwGetKey(renderer::get_window(), GLFW_KEY_3))
+	{
+		cam.set_position(vec3(-50.0f, 10.0f, -50.0f));
+	}
   // 4 - (50, 10, -50)
-
-
-
+	if (glfwGetKey(renderer::get_window(), GLFW_KEY_4))
+	{
+		cam.set_position(vec3(50.0f, 10.0f, -50.0f));
+	}
   // Update the camera
-
+	cam.update(delta_time);
   // *********************************
 
   return true;
