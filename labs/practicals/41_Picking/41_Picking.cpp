@@ -70,11 +70,12 @@ bool update(float delta_time) {
   // Update the camera
 
   // If mouse button pressed get ray and check for intersection
-
+  if(glfwGetMouseButton(renderer::get_window(), GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+  {
     // Get the mouse position
-
-
-
+	  double cursor_x;
+	  double cursor_y;
+	  glfwGetCursorPos(renderer::get_window(), &cursor_x, &cursor_y);
     // Origin and direction of the ray
 
 
@@ -83,7 +84,8 @@ bool update(float delta_time) {
 
     // *********************************
     // Check all the mehes for intersection
-    for (auto &m : meshes) {
+    for (auto &m : meshes) 
+	{
       float distance = 0.0f;
       if (test_ray_oobb(origin, direction, m.second.get_minimal(), m.second.get_maximal(),
                         m.second.get_transform().get_transform_matrix(), distance))

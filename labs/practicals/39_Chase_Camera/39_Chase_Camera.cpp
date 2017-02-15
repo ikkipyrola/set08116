@@ -93,43 +93,43 @@ bool update(float delta_time) {
   double delta_x = current_x - cursor_x;
   double delta_y = current_y - cursor_y;
   // Multiply deltas by ratios and delta_time - gets actual change in orientation
-  delta_x *= ratio_width;
-  delta_y *= ratio_height;
+  delta_x *= ratio_width * delta_time;
+  delta_y *= ratio_height * delta_time;
   // Rotate cameras by delta
   // x - delta_y
   // y - delta_x
   // z - 0
-  cam.rotate(vec3(delta_x, -delta_y, 0.0f));
+  cam.rotate(vec3(-delta_y, delta_x, 0.0f));
   // Use keyboard to rotate target_mesh - QE rotate on y-axis
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_Q))
   {
-	  target_mesh.get_transform().rotate(vec3(0.0f, 0.5f, 0.0f));
+	  target_mesh.get_transform().rotate(vec3(0.0f, 0.05f, 0.0f));
   }
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_E))
   {
-	  target_mesh.get_transform().rotate(vec3(0.0f, 0.5f, 0.0f));
+	  target_mesh.get_transform().rotate(vec3(0.0f, -0.05f, 0.0f));
   }
   // Use keyboard to move the target_mesh - WSAD
-  vec3 posChange;
-  float movementSpeed = 0.5;
+  float movementSpeed = 0.05;
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_W))
   {
-	  posChange += vec3(0.0f, 0.0f, movementSpeed);
+	  //target_mesh.get_transform().position += vec3(0.0f, 0.0f, -movementSpeed);
+	  target_mesh.get_transform().position += vec3(0.0f, 0.0f, -movementSpeed);
   }
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_S))
   {
-	  posChange += vec3(0.0f, 0.0f, -movementSpeed);
+	  target_mesh.get_transform().position += vec3(0.0f, 0.0f, movementSpeed);
   }
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_A))
   {
-	  posChange += vec3(-movementSpeed, 0.0f, 0.0f);
+	  target_mesh.get_transform().position += vec3(-movementSpeed, 0.0f, 0.0f);
   }
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_D))
   {
-	  posChange += vec3(movementSpeed, 0.0f, 0.0f);
+	  target_mesh.get_transform().position += vec3(movementSpeed, 0.0f, 0.0f);
   }
   // Move camera - update target position and rotation
-  cam.move(posChange, vec3(delta_x, -delta_y, 0.0f));
+  cam.move(target_mesh.get_transform().position, eulerAngles(target_mesh.get_transform().orientation));
   // Update the camera
   cam.update(delta_time);
   // Update cursor pos
