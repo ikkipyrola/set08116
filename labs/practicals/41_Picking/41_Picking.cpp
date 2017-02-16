@@ -77,8 +77,8 @@ bool update(float delta_time) {
 	  double cursor_y;
 	  glfwGetCursorPos(renderer::get_window(), &cursor_x, &cursor_y);
     // Origin and direction of the ray
-
-
+	  vec3 origin;
+	  vec3 direction;
     // Convert mouse position to ray
 
 

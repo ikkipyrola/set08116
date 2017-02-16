@@ -13,14 +13,14 @@ target_camera cam;
 bool load_content() {
   // *********************************
   // Load in model, models/teapot.obj
-	m = mesh(geometry("C:/Users/40212722/Desktop/set08116/labs/res/models/teapot.obj"));
+	m = mesh(geometry("models/teapot.obj"));
   // Load in texture, textures/checker.png
-	tex = texture("C:/Users/40212722/Desktop/set08116/labs/res/textures/checker.png");
+	tex = texture("textures/checker.png");
   // *********************************
 
   // Load in shaders
-  eff.add_shader("27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
-  eff.add_shader("27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
   // Build effect
   eff.build();
 

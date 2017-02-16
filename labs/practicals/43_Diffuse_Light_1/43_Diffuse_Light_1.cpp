@@ -41,8 +41,8 @@ bool load_content() {
   meshes["torus"].get_transform().rotate(vec3(half_pi<float>(), 0.0f, 0.0f));
 
   // Load in shaders
-  eff.add_shader("43_Diffuse_Light_1/simple_diffuse.vert", GL_VERTEX_SHADER);
-  eff.add_shader("43_Diffuse_Light_1/simple_diffuse.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/43_Diffuse_Light_1/simple_diffuse.vert", GL_VERTEX_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/43_Diffuse_Light_1/simple_diffuse.frag", GL_FRAGMENT_SHADER); 
   // Build effect
   eff.build();
 
@@ -80,8 +80,8 @@ bool render() {
   for (auto &e : meshes) {
     auto m = e.second;
     // Bind effect
-    renderer::bind(eff);
-    // Create MVP matrix
+    renderer::bind(eff); 
+    // Create MVP matrix  
     auto M = m.get_transform().get_transform_matrix();
     auto V = cam.get_view();
     auto P = cam.get_projection();
@@ -91,13 +91,13 @@ bool render() {
 
     // *********************************
     // Set material colour- all objects red
-
+	glUniform4fv(eff.get_uniform_location("material_colour"), 1, value_ptr(vec4(1.0f, 0.0f, 0.0f, 1.0f))); 
     // Set light colour- (1.0, 1.0, 1.0, 1.0)
-
+	glUniform4fv(eff.get_uniform_location("light_colour"), 1, value_ptr(vec4(1.0f, 1.0f, 1.0f, 1.0f)));
     // Set light direction - (1.0, 1.0, -1.0)
-
+	glUniform3fv(eff.get_uniform_location("light_dir"), 1, value_ptr(vec3(1.0f, 1.0f, -1.0f))); 
     // Render mesh
-
+	renderer::render(m);
     // *********************************
   }
 

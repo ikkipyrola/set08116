@@ -2,18 +2,25 @@
 
 // The model matrix
 uniform mat4 M;
+
 // The transformation matrix
 uniform mat4 MVP;
+
 // The normal matrix
 uniform mat3 N;
+
 // Material colour
 uniform vec4 material_colour;
+
 // Shininess of the object
 uniform float shininess;
+
 // Light colour
 uniform vec4 light_colour;
+
 // Direction of the light
 uniform vec3 light_dir;
+
 // Position of the camera
 uniform vec3 eye_pos;
 
@@ -28,11 +35,11 @@ layout(location = 0) out vec4 vertex_colour;
 void main() {
   // *********************************
   // Calculate position
-
+  gl_Position = MVP * vec4(position, 1.0);
   // Transform the normal
-
+  vec3 transformed_normal = N * normal;
   // Calculate world position
-
+  vec4 world_pos = M * vec4(position, 1.0);
   // Calculate view direction
 
   // Calculate half vector between view_dir and light_dir
@@ -42,8 +49,8 @@ void main() {
   // Calculate specular
 
   // Ensure alpha is 1
-
+  diffuse.a = 1.0f;
   // Output vertex colour - just diffuse
-
+  vertex_colour = diffuse;
   // *********************************
 }

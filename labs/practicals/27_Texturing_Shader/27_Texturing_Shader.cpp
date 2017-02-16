@@ -27,7 +27,7 @@ bool load_content() {
   // Add texture coordinate buffer to geometry
   geom.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
   // *********************************
-
+   
   // Create mesh object
   m = mesh(geom);
 
