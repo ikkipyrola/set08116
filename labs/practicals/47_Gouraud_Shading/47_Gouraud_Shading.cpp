@@ -15,10 +15,10 @@ bool load_content() {
   // Create plane mesh
   meshes["plane"] = mesh(geometry_builder::create_plane());
 
-  // Create scene
+  // Create scene 
   meshes["box"] = mesh(geometry_builder::create_box());
   meshes["tetra"] = mesh(geometry_builder::create_tetrahedron());
-  meshes["pyramid"] = mesh(geometry_builder::create_pyramid());
+  meshes["pyramid"] = mesh(geometry_builder::create_pyramid()); 
   meshes["disk"] = mesh(geometry_builder::create_disk(20));
   meshes["cylinder"] = mesh(geometry_builder::create_cylinder(20, 20));
   meshes["sphere"] = mesh(geometry_builder::create_sphere(20, 20));
