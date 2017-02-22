@@ -77,13 +77,13 @@ bool load_content() {
   tex = texture("textures/checker.png");
 
   // *********************************
-  // Set lighting values
+  // Set lighting values 
   // Set lighting values, Position (-25, 10, -10)
-  light.set_position(vec4(-25.0f, 10.0f, -10.0f, 1.0f));
+  light.set_position(vec3(-25.0f, 10.0f, -10.0f));
   // Light colour white
-  light.set_light_colour(vec4(1.0f, 1.0f, 1.0f, 1.0f));
+  light.set_light_colour(vec4(1.0f, 1.0f, 1.0f, 1.0f)); 
   // Light direction to forward and down (normalized)
-  light.set_direction(vec3(0.0f, -1.0f, -1.0f));
+  light.set_direction(normalize(vec3(0.0f, 0.0f, -1.0f)));
   // Set range to 20
   light.set_range(20.0f);
   // Set power to 1

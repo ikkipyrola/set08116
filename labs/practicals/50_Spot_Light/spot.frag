@@ -48,7 +48,7 @@ void main()
   // Calculate attenuation value
   float att = spot.constant + spot.linear * d + spot.quadratic * pow(d, 2);
   // Calculate spot light intensity
-  float intensity = pow(max(dot(-spot.direction, light_dir), 0.0f), spot.power);
+  float intensity = pow(max(dot(-1 * spot.direction, light_dir), 0.0f), spot.power);
   // Calculate light colour
   vec4 light_colour = (intensity / att) * spot.light_colour;
   // Calculate view direction
@@ -58,9 +58,9 @@ void main()
   vec4 diffuse = max(dot(normal, light_dir), 0.0f) * (mat.diffuse_reflection * light_colour);
   vec3 half_vec = normalize(light_dir + view_dir);
   vec4 specular = pow(max(dot(half_vec, normal), 0.0f), mat.shininess) * (light_colour * mat.specular_reflection);
-  vec4 texture = texture(tex, tex_coord);
+  vec4 tex_col = texture(tex, tex_coord);
   vec4 primary = mat.emissive + diffuse;
-  vec4 finalColour = primary * texture + specular;
+  vec4 finalColour = primary * tex_col + specular;
   finalColour.a = 1.0f;
   colour = finalColour;
   // *********************************
