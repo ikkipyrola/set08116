@@ -23,7 +23,7 @@ layout(location = 2) out vec2 tex_coord;
 
 void main() {
   // Calculate screen position
-  gl_Position = MVP * vec4(position, 1.0);
+  gl_Position = MVP * vec4(positionIn, 1.0);
   // *********************************
   // Output other values to fragment shader
   position = vec3(M * vec4(positionIn, 1.0f));

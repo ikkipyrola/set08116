@@ -127,7 +127,7 @@ bool load_content() {
   // Green,Direction (-1, -1, 1) normalized
   // 20 range,0.5 power
   spots[3].set_position(vec3(-10.0f, 10.0f, -35.0f));
-  spots[3].set_light_colour(vec4(0.0f, 1.0f, 0.0f, 1.0f));
+  spots[3].set_light_colour(vec4(0.0f, 1.0f, 0.0f, 1.0f)); 
   spots[3].set_range(20.f);
   spots[3].set_direction(vec3(-1.0f, -1.0f, 1.0f));
   spots[3].set_power(0.5f);
@@ -137,17 +137,17 @@ bool load_content() {
   spots[4].set_position(vec3(-17.5f, 15.0f, -25.0f));
   spots[4].set_light_colour(vec4(0.0f, 0.0f, 1.0f, 1.0f));
   spots[4].set_range(20.f);
-  spots[4].set_direction(vec3(0.0f, -1.0f, 0.0f));
+  spots[4].set_direction(vec3(0.0f, -1.0f, 0.0f)); 
   spots[4].set_power(0.5f);
   // Load in shaders
   eff.add_shader("51_Multiple_Lights/multi-light.vert", GL_VERTEX_SHADER);
   eff.add_shader("51_Multiple_Lights/multi-light.frag", GL_FRAGMENT_SHADER);
-  // Build effect
+  // Build effect   
   eff.build();
-  // *********************************
+  // ********************************* 
   // Set camera properties
-  cam.set_position(vec3(50.0f, 10.0f, 50.0f));
-  cam.set_target(vec3(0.0f, 0.0f, 0.0f));
+  cam.set_position(vec3(50.0f, 10.0f, 50.0f)); 
+  cam.set_target(vec3(0.0f, 0.0f, 0.0f)); 
   cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
   return true;
 }
@@ -197,9 +197,9 @@ bool render() {
 	// Bind material
 	renderer::bind(m.get_material(), "mat");
     // Bind point lights
-
+	renderer::bind(points, "points");
     // Bind spot lights
-
+	renderer::bind(spots, "spots");
 	// Bind texture 
 	renderer::bind(tex, 0);
 	// Set tex uniform

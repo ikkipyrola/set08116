@@ -150,7 +150,7 @@ bool update(float delta_time) {
   {
 	  range -= 1.0f;
   }
-
+  /*
   // Cursor keys to rotate camera on X and Y axis
   if (glfwGetKey(renderer::get_window(), GLFW_KEY_UP))
   {
@@ -168,6 +168,7 @@ bool update(float delta_time) {
   {
 	  cam.set_up(cam.get_up() + vec3(0.0f, -0.5f, 0.0f));
   }
+  */
   // *********************************
 
   // Set range
@@ -184,7 +185,7 @@ bool update(float delta_time) {
 bool render() {
   // Render meshes
   for (auto &e : meshes) {
-    auto m = e.second;
+    auto m = e.second; 
     // Bind effect
     renderer::bind(eff);
     // Create MVP matrix
