@@ -1,0 +1,11 @@
+# CMake generation dependency list for this directory.
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/cmake/GNUInstallDirs.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/cmake/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/WriteBasicConfigVersionFile.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/cmake/glmBuildConfig.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/cmake/glmConfig.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-src/./cmake/glm.pc.in

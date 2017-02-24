@@ -1,0 +1,59 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/devil-download"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/968953e243e3e82f75d67eaf04b37071/devil-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/d014dd4994e6498d8a34604676835f48/devil-download-complete.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-install.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-mkdir.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-update.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-patch.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-configure.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-build.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "devil-download" ],
+		"name" : "devil-download"
+	}
+}

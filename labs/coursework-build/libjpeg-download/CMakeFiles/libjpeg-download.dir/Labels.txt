@@ -1,0 +1,15 @@
+# Target labels
+ libjpeg-download
+# Source files and their labels
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/libjpeg-download
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/271db959f222d6127e72c6d6458ee527/libjpeg-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/a465f0f9600b797a71475cabc3992afb/libjpeg-download-complete.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-install.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-mkdir.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-update.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-patch.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-configure.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-build.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-test.rule

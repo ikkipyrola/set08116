@@ -1,0 +1,15 @@
+# Target labels
+ zlib-download
+# Source files and their labels
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/zlib-download
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/425a356e7760399630b0ac0269acec04/zlib-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/011935acdafc9922a27f6c67a20cc09f/zlib-download-complete.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-install.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-mkdir.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-update.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-patch.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-configure.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-build.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/9d066b78f9b7bbca68cb6e3817d28839/zlib-download-test.rule

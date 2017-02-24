@@ -1,0 +1,59 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/glm-download"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeLists.txt"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/51f8a1be1a2067c63265190503de5c1a/glm-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/aaf68fafd1ca0ab8733df2c60f832c89/glm-download-complete.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-install.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-mkdir.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-update.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-patch.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-configure.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-build.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/glm-download/CMakeFiles/8297c49df5acfa24fa9de426f50e0e88/glm-download-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "glm-download" ],
+		"name" : "glm-download"
+	}
+}

@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{27F0D76C-137F-3B7B-ACEA-F6575F8C2683}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>libjpeg-download</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\libjpeg-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (git clone) for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\libjpeg-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (git clone) for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\libjpeg-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (git clone) for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\libjpeg-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing update step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing update step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing update step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/tmp/libjpeg-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No configure step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No configure step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No configure step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\tmp\libjpeg-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No build step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No build step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No build step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No install step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No install step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No install step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\e44994aad7ffe6d98b41ac89504ac8f7\libjpeg-download-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No test step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No test step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No test step for 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/e44994aad7ffe6d98b41ac89504ac8f7/libjpeg-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\a465f0f9600b797a71475cabc3992afb\libjpeg-download-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)/libjpeg-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/a465f0f9600b797a71475cabc3992afb/libjpeg-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)/libjpeg-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/a465f0f9600b797a71475cabc3992afb/libjpeg-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)/libjpeg-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/a465f0f9600b797a71475cabc3992afb/libjpeg-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'libjpeg-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/$(Configuration)/libjpeg-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/libjpeg-download-prefix/src/libjpeg-download-stamp/$(Configuration)/libjpeg-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/a465f0f9600b797a71475cabc3992afb/libjpeg-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\libjpeg-download-prefix\src\libjpeg-download-stamp\$(Configuration)\libjpeg-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\271db959f222d6127e72c6d6458ee527\libjpeg-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/271db959f222d6127e72c6d6458ee527/libjpeg-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\libjpeg-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/271db959f222d6127e72c6d6458ee527/libjpeg-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\libjpeg-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/271db959f222d6127e72c6d6458ee527/libjpeg-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\libjpeg-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/CMakeFiles/271db959f222d6127e72c6d6458ee527/libjpeg-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\$(Configuration)\libjpeg-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\libjpeg-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-download\CMakeFiles\libjpeg-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-download/ZERO_CHECK.vcxproj">
+      <Project>70DB9350-94B3-3C54-88DF-7B41C0B2399C</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

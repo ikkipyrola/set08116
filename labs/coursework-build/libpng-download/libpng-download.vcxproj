@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{36880FCB-793F-3CD4-9E5B-6F61C2907F47}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>libpng-download</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\libpng-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (git clone) for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\libpng-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (git clone) for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\libpng-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (git clone) for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\libpng-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing update step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing update step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing update step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/tmp/libpng-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No configure step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No configure step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No configure step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\tmp\libpng-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No build step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No build step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No build step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No install step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No install step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No install step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No test step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No test step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No test step for 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\9e66cca3ebec6e1a248d13f4a377b3b2\libpng-download-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)/libpng-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/9e66cca3ebec6e1a248d13f4a377b3b2/libpng-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)/libpng-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/9e66cca3ebec6e1a248d13f4a377b3b2/libpng-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)/libpng-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/9e66cca3ebec6e1a248d13f4a377b3b2/libpng-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'libpng-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/$(Configuration)/libpng-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/libpng-download-prefix/src/libpng-download-stamp/$(Configuration)/libpng-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/9e66cca3ebec6e1a248d13f4a377b3b2/libpng-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\libpng-download-prefix\src\libpng-download-stamp\$(Configuration)\libpng-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\7f393b6ed8aa4396dfbd7f993e0d2d1b\libpng-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/7f393b6ed8aa4396dfbd7f993e0d2d1b/libpng-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/7f393b6ed8aa4396dfbd7f993e0d2d1b/libpng-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/7f393b6ed8aa4396dfbd7f993e0d2d1b/libpng-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/7f393b6ed8aa4396dfbd7f993e0d2d1b/libpng-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\$(Configuration)\libpng-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/ZERO_CHECK.vcxproj">
+      <Project>ED24E3F4-D725-3ED7-A5A9-E11919E72D92</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

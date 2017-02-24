@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\68fb6fea94ea145a5a65efeb96e94ca5\assimp-download-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\d85473ff1193d3fdb34904839d5e60e1\assimp-download-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\83bf3b3cf238296589d2d41340bbdfa1\assimp-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-download\CMakeFiles\assimp-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{01E69677-BA7F-3D9A-85FB-84552D55801A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

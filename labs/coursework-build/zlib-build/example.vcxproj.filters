@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\test\example.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6AB5E57E-614E-39AC-9EE8-65FF0824B454}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

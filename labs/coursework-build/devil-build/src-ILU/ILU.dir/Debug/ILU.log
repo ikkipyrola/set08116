@@ -1,0 +1,73 @@
+﻿  Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-ILU/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-ILU\CMakeFiles\generate.stamp is up-to-date.
+  ilu_alloc.cpp
+  ilu_error.cpp
+  ilu_filter.cpp
+  ilu_filter_rcg.cpp
+  ilu_internal.cpp
+  ilu_main.cpp
+  ilu_manip.cpp
+  ilu_mipmap.cpp
+  ilu_noise.cpp
+  ilu_region.cpp
+  ilu_rotate.cpp
+  ilu_scale.cpp
+  ilu_scale2d.cpp
+  ilu_scale3d.cpp
+  ilu_scaling.cpp
+  ilu_states.cpp
+  ilu_utilities.cpp
+ilu_error.obj : warning LNK4197: export 'iluErrorString' specified multiple times; using first specification
+ilu_error.obj : warning LNK4197: export 'iluSetLanguage' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluAlienify' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluBlurAvg' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluBlurGaussian' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluContrast' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluEdgeDetectE' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluEdgeDetectP' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluEdgeDetectS' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluEmboss' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluConvolution' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluGammaCorrect' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluPixelize' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluSaturate1f' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluSaturate4f' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluScaleAlpha' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluScaleColours' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluSepia' specified multiple times; using first specification
+ilu_filter.obj : warning LNK4197: export 'iluSharpen' specified multiple times; using first specification
+ilu_main.obj : warning LNK4197: export 'iluInit' specified multiple times; using first specification
+ilu_main.obj : warning LNK4197: export 'iluLoadImage' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluColoursUsed' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluCompareImage' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluCrop' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluEnlargeCanvas' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluEqualize' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluEqualize2' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluFlipImage' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluInvertAlpha' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluMirror' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluNegative' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluReplaceColour' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluSwapColours' specified multiple times; using first specification
+ilu_manip.obj : warning LNK4197: export 'iluWave' specified multiple times; using first specification
+ilu_mipmap.obj : warning LNK4197: export 'iluBuildMipmaps' specified multiple times; using first specification
+ilu_noise.obj : warning LNK4197: export 'iluNoisify' specified multiple times; using first specification
+ilu_region.obj : warning LNK4197: export 'iluRegionfv' specified multiple times; using first specification
+ilu_region.obj : warning LNK4197: export 'iluRegioniv' specified multiple times; using first specification
+ilu_rotate.obj : warning LNK4197: export 'iluRotate' specified multiple times; using first specification
+ilu_rotate.obj : warning LNK4197: export 'iluRotate3D' specified multiple times; using first specification
+ilu_rotate.obj : warning LNK4197: export 'iluRotate_' specified multiple times; using first specification
+ilu_rotate.obj : warning LNK4197: export 'iluRotate3D_' specified multiple times; using first specification
+ilu_scale.obj : warning LNK4197: export 'iluEnlargeImage' specified multiple times; using first specification
+ilu_scale.obj : warning LNK4197: export 'iluScale' specified multiple times; using first specification
+ilu_scale.obj : warning LNK4197: export 'iluScale_' specified multiple times; using first specification
+ilu_states.obj : warning LNK4197: export 'iluGetInteger' specified multiple times; using first specification
+ilu_states.obj : warning LNK4197: export 'iluGetIntegerv' specified multiple times; using first specification
+ilu_states.obj : warning LNK4197: export 'iluGetString' specified multiple times; using first specification
+ilu_states.obj : warning LNK4197: export 'iluImageParameter' specified multiple times; using first specification
+ilu_utilities.obj : warning LNK4197: export 'iluDeleteImage' specified multiple times; using first specification
+ilu_utilities.obj : warning LNK4197: export 'iluGenImage' specified multiple times; using first specification
+ilu_utilities.obj : warning LNK4197: export 'iluGetImageInfo' specified multiple times; using first specification
+     Creating library C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/ILU.lib and object C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/ILU.exp
+  ILU.vcxproj -> C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\DEBUG\ILU.dll

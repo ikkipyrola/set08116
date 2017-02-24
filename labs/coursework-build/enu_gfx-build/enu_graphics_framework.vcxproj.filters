@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\arc_ball_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\chase_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\cubemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\depth_buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\directional_light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\effect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\frame_buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\free_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\geometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\geometry_builder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\shadow_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\target_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\arc_ball_camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\chase_camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\cubemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\depth_buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\directional_light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\effect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\frame_buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\free_camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\geometry_builder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\graphics_framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\point_light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\shadow_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\spot_light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\target_camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\src\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6AB5E57E-614E-39AC-9EE8-65FF0824B454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{55249330-7F92-3BBA-ACB2-154BD3359742}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

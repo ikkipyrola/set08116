@@ -53,8 +53,8 @@ bool load_content() {
   spot.set_power(10.0f);
 
   // Load in shaders
-  shadow_eff.add_shader("50_Spot_Light/spot.vert", GL_VERTEX_SHADER);
-  shadow_eff.add_shader("50_Spot_Light/spot.frag", GL_FRAGMENT_SHADER);
+  shadow_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/50_Spot_Light/spot.vert", GL_VERTEX_SHADER);
+  shadow_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/50_Spot_Light/spot.frag", GL_FRAGMENT_SHADER);
   // Build effect
   shadow_eff.build();
 

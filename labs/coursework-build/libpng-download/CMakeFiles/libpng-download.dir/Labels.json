@@ -1,0 +1,59 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/libpng-download"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeLists.txt"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/7f393b6ed8aa4396dfbd7f993e0d2d1b/libpng-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/9e66cca3ebec6e1a248d13f4a377b3b2/libpng-download-complete.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-install.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-mkdir.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-download.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-update.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-patch.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-configure.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-build.rule"
+		},
+		
+		{
+			"file" : "C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-download/CMakeFiles/5734ca16d0a435c06975ebabbc878b98/libpng-download-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "libpng-download" ],
+		"name" : "libpng-download"
+	}
+}

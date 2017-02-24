@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{9D355D96-3E40-3F26-B4A5-52F11E7A34C9}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>enu_gfx-download</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\enu_gfx-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (git clone) for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\enu_gfx-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (git clone) for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\enu_gfx-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (git clone) for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\enu_gfx-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing update step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing update step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing update step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/tmp/enu_gfx-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No configure step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No configure step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No configure step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\tmp\enu_gfx-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No build step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No build step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No build step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No install step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No install step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No install step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\e101d89c3c82a3d24945b4536faa5461\enu_gfx-download-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No test step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No test step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No test step for 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/e101d89c3c82a3d24945b4536faa5461/enu_gfx-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\debbb1090d680719177addf5de0e839b\enu_gfx-download-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)/enu_gfx-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/debbb1090d680719177addf5de0e839b/enu_gfx-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)/enu_gfx-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/debbb1090d680719177addf5de0e839b/enu_gfx-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)/enu_gfx-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/debbb1090d680719177addf5de0e839b/enu_gfx-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'enu_gfx-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/$(Configuration)/enu_gfx-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/enu_gfx-download-prefix/src/enu_gfx-download-stamp/$(Configuration)/enu_gfx-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/debbb1090d680719177addf5de0e839b/enu_gfx-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\enu_gfx-download-prefix\src\enu_gfx-download-stamp\$(Configuration)\enu_gfx-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\6c85bbbf7e2974912da5521c5f704148\enu_gfx-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/6c85bbbf7e2974912da5521c5f704148/enu_gfx-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\enu_gfx-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/6c85bbbf7e2974912da5521c5f704148/enu_gfx-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\enu_gfx-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/6c85bbbf7e2974912da5521c5f704148/enu_gfx-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\enu_gfx-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/CMakeFiles/6c85bbbf7e2974912da5521c5f704148/enu_gfx-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\$(Configuration)\enu_gfx-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\enu_gfx-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\enu_gfx-download\CMakeFiles\enu_gfx-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/enu_gfx-download/ZERO_CHECK.vcxproj">
+      <Project>80C05C58-A8E0-3192-BDC8-747DB9B533C5</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

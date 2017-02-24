@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{C03A371C-4781-3301-87F5-0A855D7E1376}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>IL</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\DEBUG\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">IL.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DevIL</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\RELEASE\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">IL.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DevIL</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\MINSIZEREL\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">IL.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">DevIL</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\RELWITHDEBINFO\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">IL.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">DevIL</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR="Debug";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR=\"Debug\";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\DEBUG\libpng16d.lib;..\..\bin\DEBUG\jpeg.lib;..\..\bin\DEBUG\zlibd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/DevIL.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/msvc/il.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/DevIL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR="Release";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR=\"Release\";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\RELEASE\libpng16.lib;..\..\bin\RELEASE\jpeg.lib;..\..\bin\RELEASE\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/DevIL.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/msvc/il.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/DevIL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR="MinSizeRel";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR=\"MinSizeRel\";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\MINSIZEREL\libpng16.lib;..\..\bin\MINSIZEREL\jpeg.lib;..\..\bin\MINSIZEREL\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/DevIL.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/msvc/il.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/DevIL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR="RelWithDebInfo";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;IL_DLL;JPEGSTATIC;CMAKE_INTDIR=\"RelWithDebInfo\";IL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\..\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\libjpeg-build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\RELWITHDEBINFO\libpng16.lib;..\..\bin\RELWITHDEBINFO\jpeg.lib;..\..\bin\RELWITHDEBINFO\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/DevIL.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/msvc/il.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/DevIL.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.c.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\CMakeFiles\CheckTypeSize\CMAKE_SIZEOF_UNSIGNED_SHORT.c;C:\Program Files\CMake\share\cmake-3.6\Modules\TestEndianess.c.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindTIFF.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJasper.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindlibSquish.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindLCMS2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindMNG.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\config.h.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\pkgconfig\IL.pc.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.c.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\CMakeFiles\CheckTypeSize\CMAKE_SIZEOF_UNSIGNED_SHORT.c;C:\Program Files\CMake\share\cmake-3.6\Modules\TestEndianess.c.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindTIFF.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJasper.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindlibSquish.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindLCMS2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindMNG.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\config.h.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\pkgconfig\IL.pc.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.c.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\CMakeFiles\CheckTypeSize\CMAKE_SIZEOF_UNSIGNED_SHORT.c;C:\Program Files\CMake\share\cmake-3.6\Modules\TestEndianess.c.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindTIFF.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJasper.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindlibSquish.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindLCMS2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindMNG.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\config.h.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\pkgconfig\IL.pc.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src/DevIL/src-IL/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckTypeSize.c.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\CMakeFiles\CheckTypeSize\CMAKE_SIZEOF_UNSIGNED_SHORT.c;C:\Program Files\CMake\share\cmake-3.6\Modules\TestEndianess.c.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindTIFF.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJasper.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindJPEG.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindlibSquish.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindLCMS2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\cmake\Modules\FindMNG.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\config.h.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\pkgconfig\IL.pc.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build\src-IL\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\altivec_common.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\altivec_typeconversion.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_alloc.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_bits.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_bmp.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_dcx.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_dds.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_doompal.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_dpx.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_endian.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_exr.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_files.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_gif.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_hdr.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_icns.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_icon.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_internal.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_jp2.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_jpeg.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_lif.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_manip.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_mdl.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_pal.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_pcx.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_pic.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_pnm.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_psd.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_psp.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_q2pal.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_register.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_rle.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_sgi.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_stack.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_states.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_targa.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_utx.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_vtf.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\include\il_wdp.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\include\IL\devil_internal_exports.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\include\IL\il.h" />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\altivec_common.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\altivec_typeconversion.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_alloc.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_bits.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_blp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_bmp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_convbuff.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_convert.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_cut.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_dcx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_dds-save.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_dds.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_devil.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_dicom.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_doom.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_dpx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_endian.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_error.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_exr.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_fastconv.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_files.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_fits.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_ftx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_gif.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_hdr.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_header.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_icns.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_icon.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_iff.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_ilbm.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_internal.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_io.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_iwi.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_jp2.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_jpeg.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_ktx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_lif.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_main.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_manip.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_mdl.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_mng.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_mp3.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_neuquant.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_nvidia.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pal.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pcd.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pcx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pic.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pix.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_png.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pnm.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_profiles.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_psd.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_psp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_pxr.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_quantizer.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_raw.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_rawdata.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_register.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_rle.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_rot.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_sgi.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_size.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_squish.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_stack.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_states.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_sun.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_targa.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_texture.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_tiff.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_tpl.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_utility.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_utx.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_vtf.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_wal.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_wbmp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_wdp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\src\il_xpm.cpp"  />
+    <ResourceCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\msvc\IL.rc"  />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\msvc\resources\IL Logo.ico" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\AUTHORS" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\ChangeLog" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\CREDITS" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\Libraries.txt" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\README.md" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\README.cmake" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\TODO" />
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-IL\msvc\il.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/ZERO_CHECK.vcxproj">
+      <Project>3764DE79-3740-39EE-98E0-54D648966C9C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/libjpeg-build/jpeg.vcxproj">
+      <Project>4E0EB67F-AA08-39CC-861D-1CCEF60355DC</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-build/png.vcxproj">
+      <Project>E69A907F-F549-3D0A-A5CF-3CF277D48C88</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-build/zlib.vcxproj">
+      <Project>FDF2D07F-591B-38FE-B73A-E69D35BCAA90</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

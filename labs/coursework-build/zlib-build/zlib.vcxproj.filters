@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\gzclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\gzlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\gzread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\gzwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\infback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\uncompr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\gzguts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src\win32\zlib1.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6AB5E57E-614E-39AC-9EE8-65FF0824B454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{55249330-7F92-3BBA-ACB2-154BD3359742}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

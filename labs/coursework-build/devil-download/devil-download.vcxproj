@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{A4E42FC9-8B84-396F-AE36-39817A3C9B0B}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>devil-download</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download -BC:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystem.cmake.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-3.6\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt.in;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\devil-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (git clone) for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\devil-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (git clone) for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\devil-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (git clone) for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\devil-download-gitinfo.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing update step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing update step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing update step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/tmp/devil-download-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-update.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-patch.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No configure step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No configure step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No configure step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-configure.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\tmp\devil-download-cfgcmd.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No build step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No build step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No build step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-build.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No install step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No install step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No install step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-install.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\8aff6b6288493059d3f349bf76761b4a\devil-download-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No test step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No test step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No test step for 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/8aff6b6288493059d3f349bf76761b4a/devil-download-test.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\d014dd4994e6498d8a34604676835f48\devil-download-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)/devil-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/d014dd4994e6498d8a34604676835f48/devil-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)/devil-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/d014dd4994e6498d8a34604676835f48/devil-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)/devil-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/d014dd4994e6498d8a34604676835f48/devil-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'devil-download'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/$(Configuration)/devil-download-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/devil-download-prefix/src/devil-download-stamp/$(Configuration)/devil-download-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/d014dd4994e6498d8a34604676835f48/devil-download-complete.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-mkdir;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-download;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-update;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-patch;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-configure;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-install;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\devil-download-prefix\src\devil-download-stamp\$(Configuration)\devil-download-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\968953e243e3e82f75d67eaf04b37071\devil-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/968953e243e3e82f75d67eaf04b37071/devil-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\devil-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/968953e243e3e82f75d67eaf04b37071/devil-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\devil-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/968953e243e3e82f75d67eaf04b37071/devil-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\devil-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/CMakeFiles/968953e243e3e82f75d67eaf04b37071/devil-download.rule;C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\$(Configuration)\devil-download-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\devil-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-download\CMakeFiles\devil-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/devil-download/ZERO_CHECK.vcxproj">
+      <Project>959C552A-638D-3BA2-9655-864986A8A228</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

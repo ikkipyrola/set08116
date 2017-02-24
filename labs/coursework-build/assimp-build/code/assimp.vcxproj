@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{3CEFC37C-8211-3D89-B59F-10C3343175D1}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>assimp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\DEBUG\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\RELEASE\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\MINSIZEREL\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\bin\RELWITHDEBINFO\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="Debug";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"Debug\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\DEBUG\zlibd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="Release";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"Release\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\RELEASE\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="MinSizeRel";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"MinSizeRel\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\MINSIZEREL\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR="RelWithDebInfo";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OPENDDL_NO_USE_CPP11;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_ASSXML_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_FBX_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;OPENDDLPARSER_BUILD;CMAKE_INTDIR=\"RelWithDebInfo\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\zlib-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glfw-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glew-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\glm-src;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\.;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\rapidjson\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..\contrib\openddlparser\include;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\bin\RELWITHDEBINFO\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/DEBUG/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELEASE/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/MINSIZEREL/$(Configuration);C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO;C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/40212722/Desktop/set08116/labs/coursework-build/bin/RELWITHDEBINFO/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/40212722/Desktop/set08116/labs/coursework -BC:/Users/40212722/Desktop/set08116/labs/coursework-build --check-stamp-file C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/code/CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\fast_atof.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\qnan.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\BaseImporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\BaseProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Importer.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ScenePrivate.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ByteSwapper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultProgressHandler.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultIOStream.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultIOSystem.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CInterfaceIOWrapper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Hash.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\IFF.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MemoryIOWrapper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ParsingUtils.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StreamReader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StreamWriter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StringComparison.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StringUtils.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SGSpatialSort.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\VertexTriangleAdjacency.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\GenericProperty.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SpatialSort.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SceneCombiner.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ScenePreprocessor.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SkeletonMeshBuilder.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SplitByBoneCountProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SmoothingGroups.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StandardShapes.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TargetAnimation.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveComments.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Subdivision.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Vertex.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\LineSplitter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TinyFormatter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Profiler.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\LogAux.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Bitmap.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\XMLTools.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\LogStream.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Logger.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Win32DebugLogStream.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FileLogStream.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StdOStreamLogStream.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\BlobIOSystem.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CalcTangentsProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ComputeUVMappingProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ConvertToLHProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindDegenerates.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindInstancesProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindInvalidDataProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FixNormalsStep.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\GenFaceNormalsProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\GenVertexNormalsProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\PretransformVertices.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ImproveCacheLocality.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\JoinVerticesProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\LimitBoneWeightsProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveRedundantMaterials.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveVCProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SortByPTypeProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SplitLargeMeshes.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TextureTransform.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TriangulateProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ValidateDataStructure.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\OptimizeGraph.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\OptimizeMeshes.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DeboneProcess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ProcessHelper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\PolyTools.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MakeVerboseFormat.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MaterialSystem.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StepExporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSHelper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSLoader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSExporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD2FileData.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD2Loader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD2NormalTable.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD3FileData.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD3Loader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD5Loader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD5Parser.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MDLDefaultColorMap.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MDLFileData.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MDLLoader.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileData.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileImporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileMtlImporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileParser.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjTools.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjExporter.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\irrXMLWrapper.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\CXMLReaderImpl.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\heapsort.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\irrArray.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\irrString.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\irrTypes.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\irrXML.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\ConvertUTF\ConvertUTF.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\unzip\crypt.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\unzip\ioapi.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\unzip\unzip.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\common\shapes.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\common\utils.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\advancing_front.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\cdt.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\sweep.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\clipper\clipper.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\OpenDDLParser.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\OpenDDLParserUtils.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\OpenDDLCommon.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\OpenDDLExport.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\DDLNode.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\include\openddlparser\Value.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\anim.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\ai_assert.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\camera.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\color4.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\color4.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\config.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\defs.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\cfileio.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\light.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\material.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\material.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\matrix3x3.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\matrix3x3.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\matrix4x4.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\matrix4x4.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\mesh.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\postprocess.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\quaternion.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\quaternion.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\scene.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\metadata.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\texture.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\types.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\vector2.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\vector2.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\vector3.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\vector3.inl" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\version.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\cimport.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\importerdesc.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Importer.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\IOStream.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\cexport.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Exporter.hpp" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\include\assimp\Compiler\pstdint.h" />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Assimp.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\BaseImporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\BaseProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\PostStepRegistry.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ImporterRegistry.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultIOStream.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultIOSystem.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Importer.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SGSpatialSort.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\VertexTriangleAdjacency.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SpatialSort.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SceneCombiner.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ScenePreprocessor.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SkeletonMeshBuilder.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SplitByBoneCountProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StandardShapes.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TargetAnimation.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveComments.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Subdivision.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Bitmap.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Version.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DefaultLogger.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\Exporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\AssimpCExport.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\CalcTangentsProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ComputeUVMappingProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ConvertToLHProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindDegenerates.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindInstancesProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FindInvalidDataProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\FixNormalsStep.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\GenFaceNormalsProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\GenVertexNormalsProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\PretransformVertices.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ImproveCacheLocality.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\JoinVerticesProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\LimitBoneWeightsProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveRedundantMaterials.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\RemoveVCProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SortByPTypeProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\SplitLargeMeshes.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TextureTransform.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\TriangulateProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ValidateDataStructure.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\OptimizeGraph.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\OptimizeMeshes.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\DeboneProcess.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ProcessHelper.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MakeVerboseFormat.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MaterialSystem.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\StepExporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSConverter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSLoader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\3DSExporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD2Loader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD3Loader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD5Loader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MD5Parser.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MDLLoader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\MDLMaterialLoader.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileImporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileMtlImporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjFileParser.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\code\ObjExporter.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\irrXML\irrXML.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\ConvertUTF\ConvertUTF.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\unzip\ioapi.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\unzip\unzip.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\common\shapes.cc"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\advancing_front.cc"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\cdt.cc"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\sweep.cc"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\poly2tri\poly2tri\sweep\sweep_context.cc"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\clipper\clipper.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\code\OpenDDLParser.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\code\DDLNode.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\code\OpenDDLCommon.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\code\OpenDDLExport.cpp"  />
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\assimp-src\contrib\openddlparser\code\Value.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/ZERO_CHECK.vcxproj">
+      <Project>3764DE79-3740-39EE-98E0-54D648966C9C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-build/zlib.vcxproj">
+      <Project>FDF2D07F-591B-38FE-B73A-E69D35BCAA90</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.6/Modules/CheckCSourceCompiles.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src/scripts/pnglibconf.h.prebuilt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src/scripts/genchk.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src/scripts/genout.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/libpng-src/scripts/gensrc.cmake.in

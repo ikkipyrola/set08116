@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_allegro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_directx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_directx10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_directx9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_directxm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_internal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_opengl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_sdlsurface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_states.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\src\ilut_x11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\include\ilut_allegro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\include\ilut_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\include\ilut_opengl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\include\ilut_states.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\include\IL\devil_internal_exports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\include\IL\ilut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\msvc\resources\IL Logo.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\msvc\ilut.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\devil-src\DevIL\src-ILUT\msvc\ILUT.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6AB5E57E-614E-39AC-9EE8-65FF0824B454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{55249330-7F92-3BBA-ACB2-154BD3359742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{405861B8-AAC7-35C4-A0D8-93053ACB3A17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

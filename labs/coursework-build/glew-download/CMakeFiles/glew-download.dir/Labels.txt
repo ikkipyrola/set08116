@@ -1,0 +1,15 @@
+# Target labels
+ glew-download
+# Source files and their labels
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/glew-download
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/fca9b5599685b48aee1d97ba8de849ac/glew-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/72ab39892ea8ac475009e682a15c1ad9/glew-download-complete.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-install.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-mkdir.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-update.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-patch.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-configure.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-build.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glew-download/CMakeFiles/61430b6fd102bc1f4e5ccdfb7cfe6031/glew-download-test.rule

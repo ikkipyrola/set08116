@@ -1,0 +1,3 @@
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/zlib-download.dir
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/ALL_BUILD.dir
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/zlib-download/CMakeFiles/ZERO_CHECK.dir

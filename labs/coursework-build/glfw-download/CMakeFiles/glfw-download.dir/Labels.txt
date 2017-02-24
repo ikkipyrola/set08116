@@ -1,0 +1,15 @@
+# Target labels
+ glfw-download
+# Source files and their labels
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/glfw-download
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/d4b9f86ec19e52a356ecf355c8b2b683/glfw-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/cc0362a8a8821b11d116b15ce1f832d3/glfw-download-complete.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-install.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-mkdir.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-download.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-update.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-patch.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-configure.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-build.rule
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/glfw-download/CMakeFiles/5b1971cb905f1cbd855f65c2aba8e972/glfw-download-test.rule

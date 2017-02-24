@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\5734ca16d0a435c06975ebabbc878b98\libpng-download-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\9e66cca3ebec6e1a248d13f4a377b3b2\libpng-download-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\7f393b6ed8aa4396dfbd7f993e0d2d1b\libpng-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\40212722\Desktop\set08116\labs\coursework-build\libpng-download\CMakeFiles\libpng-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0DB99368-CF0D-33F1-8139-48B8D7784D62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

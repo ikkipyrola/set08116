@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/CMakeLists.txt
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/revision.h.in
+C:/Program Files/CMake/share/cmake-3.6/Modules/FindPkgConfig.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.6/Modules/CMakeParseArguments.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/cmake-modules/PrecompiledHeader.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/cmake-modules/cmake_uninstall.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/assimp-config.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/assimp-config-version.cmake.in
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/cmake-modules/FindDirectX.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/cmake-modules/FindPkgMacros.cmake
+C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-src/assimp.pc.in
