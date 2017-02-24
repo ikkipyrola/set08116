@@ -1,3 +1,0 @@
-repository='https://github.com/dooglz/DevIL.git'
-module=''
-tag=''

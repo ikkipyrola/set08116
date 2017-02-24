@@ -1,7 +1,0 @@
-prefix=C:/Program Files/set08116_graphics_coursework
-includedir=${prefix}/include
-
-Name: GLM
-Description: OpenGL Mathematics
-Version: 0.9.8
-Cflags: -I${includedir}

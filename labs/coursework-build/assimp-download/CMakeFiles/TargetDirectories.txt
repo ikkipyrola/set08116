@@ -1,3 +1,0 @@
-C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-download/CMakeFiles/assimp-download.dir
-C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-download/CMakeFiles/ALL_BUILD.dir
-C:/Users/40212722/Desktop/set08116/labs/coursework-build/assimp-download/CMakeFiles/ZERO_CHECK.dir

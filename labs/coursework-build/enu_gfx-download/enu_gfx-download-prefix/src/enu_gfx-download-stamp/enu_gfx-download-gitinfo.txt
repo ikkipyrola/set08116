@@ -1,3 +1,0 @@
-repository='https://github.com/edinburgh-napier/set08116_framework'
-module=''
-tag=''
