@@ -61,7 +61,11 @@ bool load_content() {
 
   // Load in shaders
   main_eff.add_shader("54_Shadowing/shadow.vert", GL_VERTEX_SHADER);
-  vector<string> frag_shaders{"54_Shadowing/shadow.frag", "shaders/part_spot.frag", "shaders/part_shadow.frag"};
+  vector<string> frag_shaders
+  {
+	  "54_Shadowing/shadow.frag", 
+	  "shaders/part_spot.frag", 
+	  "shaders/part_shadow.frag"};
   main_eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
 
   shadow_eff.add_shader("50_Spot_Light/spot.vert", GL_VERTEX_SHADER); 
@@ -127,8 +131,10 @@ bool render() {
 
   // Bind shader
   renderer::bind(shadow_eff);
+
   // Render meshes
-  for (auto &e : meshes) {
+  for (auto &e : meshes) 
+  {
     auto m = e.second;
     // Create MVP matrix
     auto M = m.get_transform().get_transform_matrix();
