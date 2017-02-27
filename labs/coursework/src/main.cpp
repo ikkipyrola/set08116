@@ -52,8 +52,7 @@ bool load_content()
 	normal_maps["plane"] = texture("textures/231_norm.jpg");
 	//dissolve = texture("textures/blend_map2.jpg");
 
-	meshes["box"] = mesh(geometry_builder::create_box());
-	meshes["box"].get_transform().scale *= 5;
+	meshes["box"] = mesh(geometry_builder::create_box(vec3(5.0f, 5.0f, 5.0f)));
 	meshes["box"].get_transform().translate(vec3(-15.0f, 2.5f, -40.0f));
 	textures["box"] = texture("textures/237.jpg");
 	normal_maps["box"] = texture("textures/237_norm.jpg");
@@ -77,7 +76,7 @@ bool load_content()
 	meshes["sphere"].set_material(mat);
 
 	// Set lighting values for point lights
-	points[0].set_position(vec3(-25.0f, 5.0f, -15.0f));
+	points[0].set_position(vec3(-25.0f, 10.0f, -15.0f));
 	points[0].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[0].set_range(30.0f);
 
@@ -85,7 +84,7 @@ bool load_content()
 	points[1].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[1].set_range(20.f);
 
-	// General sun
+	// General light
 	points[2].set_position(vec3(-10.0f, 30.0f, -15.0f));
 	points[2].set_light_colour(vec4(1.0f, 0.9f, 0.9f, 1.0f));
 	points[2].set_range(50.f);
