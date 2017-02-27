@@ -6,35 +6,29 @@ using namespace graphics_framework;
 using namespace glm;
 
 map<string, mesh> meshes;
-map<string, texture> textures;
+map<string, texture> textures; // map<string, texture*> textures;
 map<string, texture> normal_maps;
 effect eff;
-effect shadow_eff;
 
 // Meshes and textures for the transform hierarchy
 map<string, mesh> transform_meshes;
 map<string, texture> transform_textures;
 
-/*
-// Dissolve texture
-texture dissolve;
-// Dissolve factor to set on shader
-float dissolve_factor = 1.0f;
-vec2 uv_scroll;
-*/
-
+// Cameras
 int cam_choice = 1;
 free_camera free_cam;
 double cursor_x = 0.0;
 double cursor_y = 0.0;
-
 target_camera target_cam;
 
+// Lights
 directional_light light;
-vector<point_light> points(4);
-vector<spot_light> spots(5);
+vector<point_light> points(3);
+vector<spot_light> spots(3);
 
-//shadow_map shadow;
+// Shadows
+shadow_map shadow;
+effect shadow_eff;
 
 bool initialise() 
 {
@@ -49,7 +43,7 @@ bool initialise()
 bool load_content()
 {
 	// Create shadow map- use screen size
-	//shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
+	shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
 
 	// Load geometry
 	meshes["plane"] = mesh(geometry_builder::create_plane());
@@ -117,9 +111,14 @@ bool load_content()
 
 	/*
 	// Create transform meshes
+	material sphere_mat;
+	sphere_mat.set_diffuse(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	transform_meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
+	transform_meshes["sphere_1"].set_material(sphere_mat);
 	transform_meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
+	transform_meshes["sphere_1"].set_material(sphere_mat);
 	transform_meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
+	transform_meshes["sphere_1"].set_material(sphere_mat);
 
 	transform_meshes["sphere_1"].get_transform().translate(vec3(0.0f, 2.0f, 0.0f));
 	transform_meshes["sphere_2"].get_transform().translate(vec3(0.0f, 0.0f, 2.0f));
@@ -137,29 +136,18 @@ bool load_content()
 		"shaders/basic.frag",
 		"shaders/part_point.frag", 
 		"shaders/part_spot.frag", 
-		// "shaders/part_shadow.frag",
+		"shaders/part_shadow.frag",
 		//"shaders/part_normal_map.frag",
 		//"shaders/part_direction.frag"
 	};
 	eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
-	
-	/*
-	eff.add_shader("shaders/basic.frag", GL_FRAGMENT_SHADER);
-	eff.add_shader("shaders/part_point.frag", GL_FRAGMENT_SHADER);
-	eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER); 
-	eff.add_shader("shaders/part_normal_map.frag", GL_FRAGMENT_SHADER);
-	eff.add_shader("shaders/part_direction.frag", GL_FRAGMENT_SHADER);
-	*/ 
 
-	// Build effect
-	eff.build();
-
-	/*
 	shadow_eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
-	shadow_eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER);  
+	shadow_eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
 	 
+	// Build effects
+	eff.build();
 	shadow_eff.build();
-	*/
 
 	// Set free camera properties
 	free_cam.set_position(vec3(0.0f, 10.0f, 10.0f));
@@ -177,6 +165,7 @@ bool load_content()
 
 bool update(float delta_time) 
 {
+
 	/* THIS IS NOT WORKING AT ALL 
 	bool brighter = true;
 	float range = 30.0f;
@@ -277,18 +266,15 @@ bool update(float delta_time)
 		cam_choice = 2;
 	}
 
-	/*
 	// Update the shadow map light_position from the spot light
 	shadow.light_position = spots[0].get_position();
 	// do the same for light_dir property
 	shadow.light_dir = spots[0].get_direction();
-	*/
 
 	return true;
 }
 
-/*
-bool renderShadow()
+bool render_shadow_map()
 {
 	// Set render target to shadow map
 	renderer::set_render_target(shadow);
@@ -306,13 +292,10 @@ bool renderShadow()
 	{
 		auto this_mesh = e.second;
 
-		// Bind effect
-		renderer::bind(eff);
-
-		// Create MVP matrix
+		// Create MVP matrix (view matrix from shadow map)
 		mat4 MVP;
 		mat4 M = this_mesh.get_transform().get_transform_matrix();
-		auto V = shadow.get_view(); // view matrix taken from shadow map
+		auto V = shadow.get_view();
 		MVP = LightProjectionMat * V * M;
 
 		// Set MVP matrix uniform
@@ -325,12 +308,20 @@ bool renderShadow()
 	}
 }
 
-*/
-
-/*
-bool render_hierarchy_spheres()
+bool render() 
 {
+	render_shadow_map();
 
+	// Set render target back to the screen
+	renderer::set_render_target();
+	// Set face cull mode to back
+	glCullFace(GL_BACK);
+
+	// Bind shader
+	renderer::bind(eff);
+
+	/* ATTEMPT AT ROTATIONS
+	// render_hierarchy_spheres();
 	mat4 PV;
 	if (cam_choice == 1)
 	{
@@ -345,14 +336,14 @@ bool render_hierarchy_spheres()
 		PV = V * P;
 	}
 
-	// Find the lcoation for the MVP uniform
+	// Find the location for the MVP uniform
 	const auto loc = eff.get_uniform_location("MVP");
 	std::array<string, 3> names = { "sphere_1", "sphere_2", "sphere_3" };
 
 	// Render meshes
 	for (size_t i = 0; i < transform_meshes.size(); i++)
 	{
-
+		
 		// SET M to be the usual mesh transform matrix
 		auto M = transform_meshes[names[i]].get_transform().get_transform_matrix();
 
@@ -369,31 +360,11 @@ bool render_hierarchy_spheres()
 		renderer::bind(transform_textures[names[i]], 0);
 		// Set the texture value for the shader here
 		glUniform1i(eff.get_uniform_location("tex"), 0);
-		
 
 		// Render mesh
 		renderer::render(transform_meshes[names[i]]);
 	}
-
-	return true;
-}
-*/
-
-bool render() 
-{
-	/*
-	renderShadow();
-
-	// Set render target back to the screen
-	renderer::set_render_target();
-	// Set face cull mode to back
-	glCullFace(GL_BACK);
 	*/
-
-	// Bind shader
-	renderer::bind(eff);
-
-	// render_hierarchy_spheres();
 
 	mat4 MVP;
 
@@ -401,47 +372,37 @@ bool render()
 	{
 		auto this_mesh = e.second;
 
-		/*
 		// Create MVP matrix
-		mat4 lightMVP;
-		auto V = shadow.get_view(); // viewmatrix from the shadow map 
-		mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
 		mat4 M = this_mesh.get_transform().get_transform_matrix();
-
-		// Multiply together with LightProjectionMat
-		lightMVP = LightProjectionMat * V * M;
-		*/
-
-		//mat4 lightMVP;
-
-		mat4 M = this_mesh.get_transform().get_transform_matrix();
-
 		if (cam_choice == 1)
 		{
 			auto V = free_cam.get_view();
 			auto P = free_cam.get_projection();
 			MVP = P * V * M;
-			//lightMVP = P * V * M;
+
 		}
 		else if (cam_choice == 2)
 		{
 			auto V = target_cam.get_view();
 			auto P = target_cam.get_projection();
 			MVP = P * V * M;
-			//lightMVP = P * V * M;
 		}
-
-		/*
-		// Set MVP matrix uniform
-		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
-		*/
-
 		// Set MVP matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
 
+		// Create lightMVP uniform
+		mat4 lightMVP;
+		auto lV = shadow.get_view();
+		mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
+		// Multiply together with LightProjectionMat
+		lightMVP = LightProjectionMat * lV * M;
+		// Set MVP matrix uniform
+		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
+
+
 		// Bind and set textures
 		renderer::bind(textures[e.first], 0);
-		glUniform1i(eff.get_uniform_location("tex"), 0);
+		glUniform1i(eff.get_uniform_location("tex"), 0); 
 
 		// Set M matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("M"), 1, GL_FALSE, value_ptr(M));
@@ -476,12 +437,10 @@ bool render()
 			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(target_cam.get_position()));
 		}
 
-		/* 
 		// Bind shadow map texture - use texture unit 1
 		renderer::bind(shadow.buffer->get_depth(), 1);
 		// Set the shadow_map uniform
 		glUniform1i(eff.get_uniform_location("shadow_map"), 1);
-		*/
 
 		// Render geometry
 		renderer::render(this_mesh);

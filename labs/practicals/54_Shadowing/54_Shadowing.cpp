@@ -114,7 +114,8 @@ bool update(float delta_time) {
   return true;
 }
 
-bool render() {
+bool render() 
+{
   // *********************************
   // Set render target to shadow map
 	renderer::set_render_target(shadow);
@@ -151,6 +152,9 @@ bool render() {
     // Render mesh
     renderer::render(m);
   }
+
+
+
   // *********************************
   // Set render target back to the screen
   renderer::set_render_target();
@@ -161,8 +165,10 @@ bool render() {
   // Bind shader
   renderer::bind(main_eff);
 
+
   // Render meshes
-  for (auto &e : meshes) {
+  for (auto &e : meshes) 
+  {
     auto m = e.second;
     // Create MVP matrix
     auto M = m.get_transform().get_transform_matrix();
