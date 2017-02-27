@@ -7,7 +7,6 @@ using namespace glm;
 
 map<string, mesh> meshes;
 map<string, texture> textures;
-geometry geom;
 effect eff;
 effect shadow_eff;
 
@@ -22,7 +21,7 @@ directional_light light;
 vector<point_light> points(4);
 vector<spot_light> spots(5);
 
-shadow_map shadow;
+//shadow_map shadow;
 
 bool initialise() 
 {
@@ -37,7 +36,7 @@ bool initialise()
 bool load_content()
 {
 	// Create shadow map- use screen size
-	shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
+	//shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
 
 	// Load geometry
 	meshes["plane"] = mesh(geometry_builder::create_plane());
@@ -93,12 +92,15 @@ bool load_content()
 	};
 	eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
 
-	shadow_eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
-	shadow_eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
-
 	// Build effect
 	eff.build();
+
+	/*
+	shadow_eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
+	shadow_eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER); 
+	
 	shadow_eff.build();
+	*/
 
 	// Set free camera properties
 	freeCam.set_position(vec3(0.0f, 10.0f, 10.0f));
@@ -116,7 +118,7 @@ bool load_content()
 
 bool update(float delta_time) 
 {
-	/* THIS IS NOT WORKING AT ALL :C
+	/* THIS IS NOT WORKING AT ALL 
 	bool brighter = true;
 	float range = 30.0f;
 	// Change pointlight constant attenduation value
@@ -153,7 +155,7 @@ bool update(float delta_time)
 
 		double current_x;
 		double current_y;
-		// *********************************
+
 		// Get the current cursor position
 		glfwGetCursorPos(renderer::get_window(), &current_x, &current_y);
 		// Calculate delta of cursor positions from last frame
@@ -166,6 +168,7 @@ bool update(float delta_time)
 		// delta_y - x-axis rotation
 		// delta_x - y-axis rotation
 		freeCam.rotate(delta_x, -delta_y);
+
 		// Use keyboard to move the camera - WSAD
 		vec3 posChange;
 		float movementSpeed = 0.5;
@@ -188,7 +191,6 @@ bool update(float delta_time)
 
 		// Move camera
 		freeCam.move(posChange);
-
 		freeCam.update(delta_time);
 
 		// Update cursor pos
@@ -209,14 +211,17 @@ bool update(float delta_time)
 		camChoice = 2;
 	}
 
+	/*
 	// Update the shadow map light_position from the spot light
 	shadow.light_position = spots[0].get_position();
 	// do the same for light_dir property
 	shadow.light_dir = spots[0].get_direction();
+	*/
 
 	return true;
 }
 
+/*
 bool renderShadow()
 {
 	// Set render target to shadow map
@@ -254,48 +259,63 @@ bool renderShadow()
 	}
 }
 
+*/
+
 bool render() 
 {
+	/*
 	renderShadow();
 
 	// Set render target back to the screen
 	renderer::set_render_target();
 	// Set face cull mode to back
 	glCullFace(GL_BACK);
-
-	// Bind shader
-	renderer::bind(eff);
+	*/
 
 	for (auto &e : meshes)
 	{
+		// Bind shader
+		renderer::bind(eff);
+
 		auto this_mesh = e.second;
 
+		/*
 		// Create MVP matrix
 		mat4 lightMVP;
-		mat4 M = this_mesh.get_transform().get_transform_matrix();
 		auto V = shadow.get_view(); // viewmatrix from the shadow map 
 		mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
+		mat4 M = this_mesh.get_transform().get_transform_matrix();
 
 		// Multiply together with LightProjectionMat
 		lightMVP = LightProjectionMat * V * M;
+		*/
 
-		/*
+		mat4 M = this_mesh.get_transform().get_transform_matrix();
+		mat4 MVP;
+		//mat4 lightMVP;
+
 		if (camChoice == 1)
 		{
 			auto V = freeCam.get_view();
 			auto P = freeCam.get_projection();
-			lightMVP = P * V * M;
+			MVP = P * V * M;
+			//lightMVP = P * V * M;
 		}
 		else if (camChoice == 2)
 		{
 			auto V = targetCam.get_view();
 			auto P = targetCam.get_projection();
-			lightMVP = P * V * M;
+			MVP = P * V * M;
+			//lightMVP = P * V * M;
 		}
+
+		/*
+		// Set MVP matrix uniform
+		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
 		*/
 
 		// Set MVP matrix uniform
-		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
+		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
 
 		// Bind and set textures
 		renderer::bind(textures[e.first], 0);
@@ -322,10 +342,12 @@ bool render()
 			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(targetCam.get_position()));
 		}
 
+		/*
 		// Bind shadow map texture - use texture unit 1
 		renderer::bind(shadow.buffer->get_depth(), 1);
 		// Set the shadow_map uniform
 		glUniform1i(eff.get_uniform_location("shadow_map"), 1);
+		*/
 
 		// Render geometry
 		renderer::render(this_mesh);

@@ -6,6 +6,8 @@ uniform mat4 M;
 uniform mat4 MVP;
 // Normal matrix
 uniform mat3 N;
+// The light transformation matrix
+uniform mat4 lightMVP;
 
 // Incoming position
 layout(location = 0) in vec3 positionIn;
@@ -20,6 +22,8 @@ layout(location = 0) out vec3 position;
 layout(location = 1) out vec3 normal;
 // Outgoing texture coordinate
 layout(location = 2) out vec2 tex_coord;
+// Outgoing position in light space
+layout (location = 3) out vec4 light_space_pos;
 
 void main() 
 {
@@ -30,5 +34,7 @@ void main()
   position = vec3(M * vec4(positionIn, 1.0f));
   normal = N * normalIn;
   tex_coord = tex_coord_in;
+  // Transform position into light space
+  light_space_pos = lightMVP * vec4(positionIn, 1.0);
 
 }
