@@ -7,15 +7,28 @@ using namespace glm;
 
 map<string, mesh> meshes;
 map<string, texture> textures;
+map<string, texture> normal_maps;
 effect eff;
 effect shadow_eff;
 
-int camChoice = 1;
-free_camera freeCam;
+// Meshes and textures for the transform hierarchy
+map<string, mesh> transform_meshes;
+map<string, texture> transform_textures;
+
+/*
+// Dissolve texture
+texture dissolve;
+// Dissolve factor to set on shader
+float dissolve_factor = 1.0f;
+vec2 uv_scroll;
+*/
+
+int cam_choice = 1;
+free_camera free_cam;
 double cursor_x = 0.0;
 double cursor_y = 0.0;
 
-target_camera targetCam;
+target_camera target_cam;
 
 directional_light light;
 vector<point_light> points(4);
@@ -41,17 +54,33 @@ bool load_content()
 	// Load geometry
 	meshes["plane"] = mesh(geometry_builder::create_plane());
 	meshes["plane"].get_transform().scale *= 2;
-	textures["plane"] = texture("C:/Users/40212722/Desktop/set08116/labs/coursework/res/textures/jade-stone.jpg");
+	textures["plane"] = texture("textures/231.jpg");
+	normal_maps["plane"] = texture("textures/231_norm.jpg");
+	//dissolve = texture("textures/blend_map2.jpg");
 
 	meshes["box"] = mesh(geometry_builder::create_box());
 	meshes["box"].get_transform().scale *= 5;
-	meshes["box"].get_transform().translate(vec3(-10.0f, 2.5f, -30.0f));
-	textures["box"] = texture("C:/Users/40212722/Desktop/set08116/labs/coursework/res/textures/237.jpg");
+	meshes["box"].get_transform().translate(vec3(-15.0f, 2.5f, -40.0f));
+	textures["box"] = texture("textures/237.jpg");
+	normal_maps["box"] = texture("textures/237_norm.jpg");
 
-	meshes["sphere"] = mesh(geometry_builder::create_sphere(30, 30));
+	material mat;
+	mat.set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	mat.set_specular(vec4(0.8f, 0.8f, 1.0f, 1.0f));
+	mat.set_shininess(20.0f);
+	meshes["box"].set_material(mat);
+
+	meshes["sphere"] = mesh(geometry_builder::create_sphere(50, 50));
 	meshes["sphere"].get_transform().scale *= 10;
 	meshes["sphere"].get_transform().translate(vec3(10.0f, 3.0f, -20.0f));
-	textures["sphere"] = texture("C:/Users/40212722/Desktop/set08116/labs/coursework/res/textures/225.jpg");
+	textures["sphere"] = texture("textures/225.jpg");
+	normal_maps["sphere"] = texture("textures/225_norm.jpg");
+
+	mat.set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	mat.set_specular(vec4(0.5f, 0.0f, 0.5f, 1.0f));
+	mat.set_shininess(40.0f);
+	mat.set_diffuse(vec4(0.2f, 0.0f, 0.2f, 1.0f));
+	meshes["sphere"].set_material(mat);
 
 	// Set lighting values for point lights
 	points[0].set_position(vec3(-25.0f, 5.0f, -15.0f));
@@ -61,6 +90,11 @@ bool load_content()
 	points[1].set_position(vec3(-25.0f, 5.0f, -35.0f));
 	points[1].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[1].set_range(20.f);
+
+	// General sun
+	points[2].set_position(vec3(-10.0f, 30.0f, -15.0f));
+	points[2].set_light_colour(vec4(1.0f, 0.9f, 0.9f, 1.0f));
+	points[2].set_range(50.f);
 
 	// Set lighting values for spot lights
 	spots[0].set_position(vec3(-25.0f, 10.0f, -15.0f));
@@ -81,6 +115,21 @@ bool load_content()
 	spots[2].set_direction(vec3(-1.0f, -1.0f, -1.0f));
 	spots[2].set_power(0.5f);
 
+	/*
+	// Create transform meshes
+	transform_meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
+	transform_meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
+	transform_meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
+
+	transform_meshes["sphere_1"].get_transform().translate(vec3(0.0f, 2.0f, 0.0f));
+	transform_meshes["sphere_2"].get_transform().translate(vec3(0.0f, 0.0f, 2.0f));
+	transform_meshes["sphere_3"].get_transform().translate(vec3(0.0f, 2.0f, 0.0f));
+
+	transform_textures["sphere_1"] = texture("textures/jade-stone.jpg");
+	transform_textures["sphere_2"] = texture("textures/stones.jpg");
+	transform_textures["sphere_3"] = texture("textures/jade-stone.jpg");
+	*/
+
 	// Load in shaders
 	eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
 	vector<string> frag_shaders
@@ -88,29 +137,39 @@ bool load_content()
 		"shaders/basic.frag",
 		"shaders/part_point.frag", 
 		"shaders/part_spot.frag", 
-		"shaders/part_shadow.frag" 
+		// "shaders/part_shadow.frag",
+		//"shaders/part_normal_map.frag",
+		//"shaders/part_direction.frag"
 	};
 	eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
+	
+	/*
+	eff.add_shader("shaders/basic.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_point.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER); 
+	eff.add_shader("shaders/part_normal_map.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_direction.frag", GL_FRAGMENT_SHADER);
+	*/ 
 
 	// Build effect
 	eff.build();
 
 	/*
 	shadow_eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
-	shadow_eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER); 
-	
+	shadow_eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER);  
+	 
 	shadow_eff.build();
 	*/
 
 	// Set free camera properties
-	freeCam.set_position(vec3(0.0f, 10.0f, 10.0f));
-	freeCam.set_target(meshes["box"].get_transform().position);
-	freeCam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
+	free_cam.set_position(vec3(0.0f, 10.0f, 10.0f));
+	free_cam.set_target(meshes["box"].get_transform().position);
+	free_cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
 
 	// Set target camera properties
-	targetCam.set_position(vec3(50.0f, 10.0f, 50.0f));
-	targetCam.set_target(vec3(0.0f, 0.0f, 0.0f));
-	targetCam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
+	target_cam.set_position(vec3(50.0f, 10.0f, 50.0f));
+	target_cam.set_target(vec3(0.0f, 0.0f, 0.0f));
+	target_cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
 
 	return true;
 }
@@ -144,8 +203,15 @@ bool update(float delta_time)
 	}
 	*/
 
+	/*
+	// Rotate the transform hierarchy spheres
+	meshes["sphere_1"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
+	meshes["sphere_2"].get_transform().rotate(vec3(0.0f, 0.0f, delta_time));
+	meshes["sphere_3"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
+	*/
+
 	// Update the camera
-	if (camChoice == 1)
+	if (cam_choice == 1)
 	{
 		static double ratio_width = quarter_pi<float>() / static_cast<float>(renderer::get_screen_width());
 		static double ratio_height =
@@ -167,11 +233,11 @@ bool update(float delta_time)
 		// Rotate cameras by delta
 		// delta_y - x-axis rotation
 		// delta_x - y-axis rotation
-		freeCam.rotate(delta_x, -delta_y);
+		free_cam.rotate(delta_x, -delta_y);
 
 		// Use keyboard to move the camera - WSAD
 		vec3 posChange;
-		float movementSpeed = 0.5;
+		float movementSpeed = 1.0f;
 		if (glfwGetKey(renderer::get_window(), GLFW_KEY_W))
 		{
 			posChange = vec3(0.0f, 0.0f, movementSpeed);
@@ -190,25 +256,25 @@ bool update(float delta_time)
 		}
 
 		// Move camera
-		freeCam.move(posChange);
-		freeCam.update(delta_time);
+		free_cam.move(posChange);
+		free_cam.update(delta_time);
 
-		// Update cursor pos
+		// Update cursor pos 
 		cursor_x = current_x;
 		cursor_y = current_y;
 	}
-	else if (camChoice == 2)
+	else if (cam_choice == 2)
 	{
-		targetCam.update(delta_time);
+		target_cam.update(delta_time);
 	}
 
 	if (glfwGetKey(renderer::get_window(), GLFW_KEY_1))
 	{
-		camChoice = 1;
+		cam_choice = 1;
 	}
 	if (glfwGetKey(renderer::get_window(), GLFW_KEY_2))
 	{
-		camChoice = 2;
+		cam_choice = 2;
 	}
 
 	/*
@@ -261,6 +327,58 @@ bool renderShadow()
 
 */
 
+/*
+bool render_hierarchy_spheres()
+{
+
+	mat4 PV;
+	if (cam_choice == 1)
+	{
+		auto V = free_cam.get_view();
+		auto P = free_cam.get_projection();
+		PV = V * P;
+	}
+	else if (cam_choice == 2)
+	{
+		auto V = target_cam.get_view();
+		auto P = target_cam.get_projection();
+		PV = V * P;
+	}
+
+	// Find the lcoation for the MVP uniform
+	const auto loc = eff.get_uniform_location("MVP");
+	std::array<string, 3> names = { "sphere_1", "sphere_2", "sphere_3" };
+
+	// Render meshes
+	for (size_t i = 0; i < transform_meshes.size(); i++)
+	{
+
+		// SET M to be the usual mesh transform matrix
+		auto M = transform_meshes[names[i]].get_transform().get_transform_matrix();
+
+		// Apply the hierarchy chain
+		for (size_t j = i; j > 0; j--)
+		{
+			M = transform_meshes[names[j - 1]].get_transform().get_transform_matrix() * M;
+		}
+
+		// Set MVP matrix uniform
+		glUniformMatrix4fv(loc, 1, GL_FALSE, value_ptr(PV * M));
+
+		// Bind texture to renderer
+		renderer::bind(transform_textures[names[i]], 0);
+		// Set the texture value for the shader here
+		glUniform1i(eff.get_uniform_location("tex"), 0);
+		
+
+		// Render mesh
+		renderer::render(transform_meshes[names[i]]);
+	}
+
+	return true;
+}
+*/
+
 bool render() 
 {
 	/*
@@ -272,11 +390,15 @@ bool render()
 	glCullFace(GL_BACK);
 	*/
 
+	// Bind shader
+	renderer::bind(eff);
+
+	// render_hierarchy_spheres();
+
+	mat4 MVP;
+
 	for (auto &e : meshes)
 	{
-		// Bind shader
-		renderer::bind(eff);
-
 		auto this_mesh = e.second;
 
 		/*
@@ -290,21 +412,21 @@ bool render()
 		lightMVP = LightProjectionMat * V * M;
 		*/
 
-		mat4 M = this_mesh.get_transform().get_transform_matrix();
-		mat4 MVP;
 		//mat4 lightMVP;
 
-		if (camChoice == 1)
+		mat4 M = this_mesh.get_transform().get_transform_matrix();
+
+		if (cam_choice == 1)
 		{
-			auto V = freeCam.get_view();
-			auto P = freeCam.get_projection();
+			auto V = free_cam.get_view();
+			auto P = free_cam.get_projection();
 			MVP = P * V * M;
 			//lightMVP = P * V * M;
 		}
-		else if (camChoice == 2)
+		else if (cam_choice == 2)
 		{
-			auto V = targetCam.get_view();
-			auto P = targetCam.get_projection();
+			auto V = target_cam.get_view();
+			auto P = target_cam.get_projection();
 			MVP = P * V * M;
 			//lightMVP = P * V * M;
 		}
@@ -332,17 +454,29 @@ bool render()
 		// Bind spot lights
 		renderer::bind(spots, "spots");
 
-		// Set eye position - Get this from active camera
-		if (camChoice == 1)
-		{
-			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(freeCam.get_position()));
-		}
-		else if (camChoice == 2)
-		{
-			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(targetCam.get_position()));
-		}
+		/*
+		// Bind light
+		renderer::bind(light, "light");
+		*/
 
 		/*
+		// Bind normal_map
+		renderer::bind(normalMaps[e.first], 1);
+		// Set normal_map uniform
+		glUniform1i(eff.get_uniform_location("normalMap"), 1);
+		*/
+
+		// Set eye position - Get this from active camera
+		if (cam_choice == 1)
+		{
+			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(free_cam.get_position()));
+		}
+		else if (cam_choice == 2)
+		{
+			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(target_cam.get_position()));
+		}
+
+		/* 
 		// Bind shadow map texture - use texture unit 1
 		renderer::bind(shadow.buffer->get_depth(), 1);
 		// Set the shadow_map uniform

@@ -5,8 +5,8 @@ using namespace std;
 using namespace graphics_framework;
 using namespace glm;
 
-std::array<mesh, 3> meshes;
-std::array<texture, 3> textures;
+map<string, mesh> meshes;
+map<string, texture> textures;
 effect eff;
 mesh plane_mesh;
 texture plane_tex;
@@ -18,26 +18,26 @@ bool load_content() {
 
   // *********************************
   // Create Three Identical Box Meshes
-
-
-
+  meshes["box1"] = mesh(geometry_builder::create_box());
+  meshes["box2"] = mesh(geometry_builder::create_box());
+  meshes["box3"] = mesh(geometry_builder::create_box());
   // Move Box One to (0,1,0)
-
+  meshes["box1"].get_transform().translate(vec3(0.0f, 1.0f, 0.0f));
   // Move Box Two to (0,0,1)
-
+	  meshes["box2"].get_transform().translate(vec3(0.0f, 0.0f, 1.0f));
   // Move Box Three to (0,1,0)
-
+	  meshes["box3"].get_transform().translate(vec3(0.0f, 1.0f, 0.0f));
   // *********************************
 
   // Load texture
   plane_tex = texture("textures/snow.jpg");
-  textures[0] = texture("textures/check_2.png");
-  textures[1] = texture("textures/check_4.png");
-  textures[2] = texture("textures/check_5.png");
+  textures["box1"] = texture("textures/check_2.png");
+  textures["box2"] = texture("textures/check_4.png");
+  textures["box3"] = texture("textures/check_5.png");
 
   // Load in shaders
-  eff.add_shader("27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
-  eff.add_shader("27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
   // Build effect
   eff.build();
 
@@ -52,11 +52,11 @@ bool load_content() {
 bool update(float delta_time) {
   // *********************************
   // rotate Box one on Y axis by delta_time
-
+	meshes["box1"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
   // rotate Box Two on Z axis by delta_time
-
+	meshes["box2"].get_transform().rotate(vec3(0.0f, 0.0f, delta_time));
   // rotate Box Three on Y axis by delta_time
-
+	meshes["box3"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
   // *********************************
   // Update the camera
   cam.update(delta_time);
@@ -74,24 +74,28 @@ bool render() {
   // Find the lcoation for the MVP uniform
   const auto loc = eff.get_uniform_location("MVP");
 
+  std::array<string, 3> names = {"box1", "box2", "box3"};
+
   // Render meshes
-  for (size_t i = 0; i < meshes.size(); i++) {
+  for (size_t i = 0; i < meshes.size(); i++) 
+  {
     // *********************************
     // SET M to be the usual mesh  transform matrix
-
+	  auto M = meshes[names[i]].get_transform().get_transform_matrix();
     // *********************************
 
     // Apply the heirarchy chain
-    for (size_t j = i; j > 0; j--) {
-      M = meshes[j - 1].get_transform().get_transform_matrix() * M;
+    for (size_t j = i; j > 0; j--) 
+	{
+      M = meshes[names[j - 1]].get_transform().get_transform_matrix() * M;
     }
 
     // Set MVP matrix uniform
     glUniformMatrix4fv(loc, 1, GL_FALSE, value_ptr(PV * M));
     // Bind texture to renderer
-    renderer::bind(textures[i], 0);
+    renderer::bind(textures[names[i]], 0);
     // Render mesh
-    renderer::render(meshes[i]);
+    renderer::render(meshes[names[i]]);
   }
 
   // Render floor
