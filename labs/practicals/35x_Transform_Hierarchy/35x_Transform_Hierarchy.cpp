@@ -12,7 +12,8 @@ mesh plane_mesh;
 texture plane_tex;
 target_camera cam;
 
-bool load_content() {
+bool load_content() 
+{
   // Create plane mesh
   plane_mesh = mesh(geometry_builder::create_plane());
 

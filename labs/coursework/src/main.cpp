@@ -80,7 +80,7 @@ bool load_content()
 	points[0].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[0].set_range(30.0f);
 
-	points[1].set_position(vec3(-25.0f, 5.0f, -35.0f));
+	points[1].set_position(vec3(-25.0f, 5.0f, -10.0f));
 	points[1].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[1].set_range(20.f);
 
@@ -289,27 +289,29 @@ bool render_shadow_map()
 
 	for (auto &e : meshes)
 	{
-		auto this_mesh = e.second;
+		if ((e.first).compare("plane"))
+		{
+			auto this_mesh = e.second;
 
-		// Create MVP matrix (view matrix from shadow map)
-		mat4 MVP;
-		mat4 M = this_mesh.get_transform().get_transform_matrix();
-		auto V = shadow.get_view();
-		MVP = LightProjectionMat * V * M;
+			// Create MVP matrix (view matrix from shadow map)
+			mat4 MVP;
+			mat4 M = this_mesh.get_transform().get_transform_matrix();
+			auto V = shadow.get_view();
+			MVP = LightProjectionMat * V * M;
 
-		// Set MVP matrix uniform
-		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
+			// Set MVP matrix uniform
+			glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
 
-		// Render mesh
-		renderer::render(this_mesh);
+			// Render mesh
+			renderer::render(this_mesh);
 
-		return true;
+			return true;
+		}
 	}
 }
 
 bool render() 
 {
-	render_shadow_map();
 
 	// Set render target back to the screen
 	renderer::set_render_target();
@@ -373,6 +375,8 @@ bool render()
 
 		// Create MVP matrix
 		mat4 M = this_mesh.get_transform().get_transform_matrix();
+
+
 		if (cam_choice == 1)
 		{
 			auto V = free_cam.get_view();
@@ -448,6 +452,14 @@ bool render()
 	return true;
 }
 
+bool ren()
+{
+	render_shadow_map();
+	render();
+	
+	return true;
+}
+
 void main() 
 {
 	// Create application
@@ -457,7 +469,7 @@ void main()
 	application.set_load_content(load_content);
 	application.set_initialise(initialise);
 	application.set_update(update);
-	application.set_render(render);
+	application.set_render(ren);
 
 	// Run application
 	application.run();
