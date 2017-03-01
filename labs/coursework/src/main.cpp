@@ -58,7 +58,7 @@ bool load_content()
 	normal_maps["box"] = texture("textures/237_norm.jpg");
 
 	material mat;
-	mat.set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	mat.set_emissive(vec4(0.2f, 0.2f, 0.2f, 1.0f));
 	mat.set_specular(vec4(0.8f, 0.8f, 1.0f, 1.0f));
 	mat.set_shininess(20.0f);
 	meshes["box"].set_material(mat);
@@ -76,7 +76,7 @@ bool load_content()
 	meshes["sphere"].set_material(mat);
 
 	// Set lighting values for point lights
-	points[0].set_position(vec3(-25.0f, 10.0f, -15.0f));
+	points[0].set_position(vec3(-25.0f, 20.0f, -15.0f));
 	points[0].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[0].set_range(30.0f);
 
@@ -90,19 +90,19 @@ bool load_content()
 	points[2].set_range(50.f);
 
 	// Set lighting values for spot lights
-	spots[0].set_position(vec3(-25.0f, 10.0f, -15.0f));
-	spots[0].set_light_colour(vec4(0.0f, 0.6f, 0.5f, 1.0f));
+	spots[0].set_position(vec3(-25.0f, 20.0f, -15.0f));
+	spots[0].set_light_colour(vec4(1.0f, 0.8f, 0.7f, 1.0f));
 	spots[0].set_range(20.f);
-	spots[0].set_direction(vec3(1.0f, -1.0f, -1.0f));
+	spots[0].set_direction(normalize(vec3(1.0f, -1.0f, -1.0f)));
 	spots[0].set_power(0.5f);
 
-	spots[1].set_position(vec3(-25.0f, 10.0f, -35.0f));
-	spots[1].set_light_colour(vec4(1.0f, 0.8f, 0.7f, 1.0f));
+	spots[1].set_position(vec3(-25.0f, 20.0f, -35.0f));
+	spots[1].set_light_colour(vec4(0.0f, 0.6f, 0.5f, 1.0f));
 	spots[1].set_range(20.f);
 	spots[1].set_direction(vec3(1.0f, -1.0f, 1.0f));
 	spots[1].set_power(0.5f);
 
-	spots[2].set_position(vec3(-10.0f, 10.0f, -15.0f));
+	spots[2].set_position(vec3(-10.0f, 20.0f, -15.0f));
 	spots[2].set_light_colour(vec4(1.0f, 0.8f, 0.7f, 1.0f));
 	spots[2].set_range(20.f);
 	spots[2].set_direction(vec3(-1.0f, -1.0f, -1.0f));
@@ -127,6 +127,18 @@ bool load_content()
 	transform_textures["sphere_2"] = texture("textures/stones.jpg");
 	transform_textures["sphere_3"] = texture("textures/jade-stone.jpg");
 	*/
+
+	meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
+	meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
+	meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
+
+	meshes["sphere_1"].get_transform().translate(vec3(-10.0f, 25.0f, -15.0f));
+	meshes["sphere_2"].get_transform().translate(vec3(-10.0f, 20.0f, -14.0f));
+	meshes["sphere_3"].get_transform().translate(vec3(-10.0f, 0.0f, 0.0f));
+
+	textures["sphere_1"] = texture("textures/jade-stone.jpg");
+	textures["sphere_2"] = texture("textures/stones.jpg");
+	textures["sphere_3"] = texture("textures/jade-stone.jpg");
 
 	// Load in shaders
 	eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
@@ -154,8 +166,8 @@ bool load_content()
 	free_cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
 
 	// Set target camera properties
-	target_cam.set_position(vec3(50.0f, 10.0f, 50.0f));
-	target_cam.set_target(vec3(0.0f, 0.0f, 0.0f));
+	target_cam.set_position(vec3(-100.0f, 10.0f, -10.0f));
+	target_cam.set_target(meshes["sphere"].get_transform().position + vec3(0.0f, 30.0f, 0.0f));
 	target_cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
 
 	return true;
@@ -164,39 +176,10 @@ bool load_content()
 
 bool update(float delta_time) 
 {
-
-	/* THIS IS NOT WORKING AT ALL 
-	bool brighter = true;
-	float range = 30.0f;
-	// Change pointlight constant attenduation value
-	if (brighter)
-	{
-		points[0].set_range(range);
-		range += 2.0f;
-
-		if (range > 50.0f)
-		{
-			brighter = false;
-		}
-	}
-	else
-	{
-		points[0].set_range(range);
-		range -= 2.0f;
-
-		if (range < 30.0f)
-		{
-			brighter = true;
-		}
-	}
-	*/
-
-	/*
 	// Rotate the transform hierarchy spheres
 	meshes["sphere_1"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
 	meshes["sphere_2"].get_transform().rotate(vec3(0.0f, 0.0f, delta_time));
 	meshes["sphere_3"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
-	*/
 
 	// Update the camera
 	if (cam_choice == 1)
@@ -321,75 +304,41 @@ bool render()
 	// Bind shader
 	renderer::bind(eff);
 
-	/* ATTEMPT AT ROTATIONS
-	// render_hierarchy_spheres();
-	mat4 PV;
-	if (cam_choice == 1)
-	{
-		auto V = free_cam.get_view();
-		auto P = free_cam.get_projection();
-		PV = V * P;
-	}
-	else if (cam_choice == 2)
-	{
-		auto V = target_cam.get_view();
-		auto P = target_cam.get_projection();
-		PV = V * P;
-	}
-
-	// Find the location for the MVP uniform
-	const auto loc = eff.get_uniform_location("MVP");
-	std::array<string, 3> names = { "sphere_1", "sphere_2", "sphere_3" };
-
-	// Render meshes
-	for (size_t i = 0; i < transform_meshes.size(); i++)
-	{
-		
-		// SET M to be the usual mesh transform matrix
-		auto M = transform_meshes[names[i]].get_transform().get_transform_matrix();
-
-		// Apply the hierarchy chain
-		for (size_t j = i; j > 0; j--)
-		{
-			M = transform_meshes[names[j - 1]].get_transform().get_transform_matrix() * M;
-		}
-
-		// Set MVP matrix uniform
-		glUniformMatrix4fv(loc, 1, GL_FALSE, value_ptr(PV * M));
-
-		// Bind texture to renderer
-		renderer::bind(transform_textures[names[i]], 0);
-		// Set the texture value for the shader here
-		glUniform1i(eff.get_uniform_location("tex"), 0);
-
-		// Render mesh
-		renderer::render(transform_meshes[names[i]]);
-	}
-	*/
-
 	mat4 MVP;
+	mat4 PV;
+	mat4 M;
 
 	for (auto &e : meshes)
 	{
 		auto this_mesh = e.second;
 
-		// Create MVP matrix
-		mat4 M = this_mesh.get_transform().get_transform_matrix();
-
-
 		if (cam_choice == 1)
 		{
-			auto V = free_cam.get_view();
-			auto P = free_cam.get_projection();
-			MVP = P * V * M;
+			PV = free_cam.get_projection() * free_cam.get_view();
 
 		}
 		else if (cam_choice == 2)
 		{
-			auto V = target_cam.get_view();
-			auto P = target_cam.get_projection();
-			MVP = P * V * M;
+			PV = target_cam.get_projection() * target_cam.get_view();
 		}
+		
+		// Create MVP matrix
+		M = this_mesh.get_transform().get_transform_matrix();
+
+		if (e.first == "sphere_2")
+		{
+			M = meshes["sphere_1"].get_transform().get_transform_matrix() * 
+				meshes["sphere_2"].get_transform().get_transform_matrix();
+		}
+		else if (e.first == "sphere_3")
+		{
+			M = meshes["sphere_1"].get_transform().get_transform_matrix() *
+				meshes["sphere_2"].get_transform().get_transform_matrix() *
+				meshes["sphere_3"].get_transform().get_transform_matrix();
+		}
+
+		MVP = PV * M;
+
 		// Set MVP matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
 
@@ -402,10 +351,9 @@ bool render()
 		// Set MVP matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
 
-
 		// Bind and set textures
 		renderer::bind(textures[e.first], 0);
-		glUniform1i(eff.get_uniform_location("tex"), 0); 
+		glUniform1i(eff.get_uniform_location("tex"), 0);
 
 		// Set M matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("M"), 1, GL_FALSE, value_ptr(M));
