@@ -31,9 +31,9 @@ bool load_content() {
   cylinder.get_material().set_diffuse(vec4(0.53f, 0.45f, 0.37f, 1.0f));
   cylinder.get_material().set_specular(vec4(1.0f, 1.0f, 1.0f, 1.0f));
   cylinder.get_material().set_shininess(25.0f);
-
+   
   // Set light properties
-  light.set_ambient_intensity(vec4(0.3f, 0.3f, 0.3f, 1.0f));
+  light.set_ambient_intensity(vec4(0.3f, 0.3f, 0.3f, 1.0f)); 
   light.set_light_colour(vec4(1.0f, 1.0f, 1.0f, 1.0f));
   light.set_direction(normalize(vec3(1.0f, 1.0f, 0.0f)));
 
@@ -89,21 +89,20 @@ bool render() {
                      value_ptr(cylinder.get_transform().get_normal_matrix()));
   // *********************************
   // Bind material
-
+  renderer::bind(cylinder.get_material(), "mat");
   // Bind light
-
-  // Bind texture
-
-  // Set tex uniform
-
+  renderer::bind(light, "light");
+  // Bind and set textures
+  renderer::bind(tex, 0);
+  glUniform1i(eff.get_uniform_location("tex"), 0);
   // Bind normal_map
-
+  renderer::bind(normal_map, 1);
   // Set normal_map uniform
-
+  glUniform1i(eff.get_uniform_location("normal_map"), 1);
   // Set eye position
-
+  glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(cam.get_position()));
   // Render mesh
-
+  renderer::render(cylinder);
   // *********************************
   return true;
 }

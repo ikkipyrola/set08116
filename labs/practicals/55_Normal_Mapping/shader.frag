@@ -52,15 +52,16 @@ layout(location = 4) in vec3 binormal;
 // Outgoing colour
 layout(location = 0) out vec4 colour;
 
-void main() {
+void main() 
+{
   // *********************************
   // Sample texture
-
+  vec4 tex_col = texture(tex, tex_coord);
   // Calculate view direction
-
+  vec3 view_dir = normalize(eye_pos - position);
   // Calculate normal from normal map
-
+  vec3 normal = calc_normal(normal, tangent, binormal, normal_map, tex_coord);
   // Calculate directional light
-
+  colour = calculate_direction(light, mat, normal, view_dir, tex_col);
   // *********************************
 }
