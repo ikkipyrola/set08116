@@ -6,13 +6,17 @@ using namespace graphics_framework;
 using namespace glm;
 
 map<string, mesh> meshes;
-map<string, texture> textures; // map<string, texture*> textures;
+map<string, texture> textures;
 map<string, texture> normal_maps;
+material temp_mat;
 effect eff;
 
-// Meshes and textures for the transform hierarchy
-map<string, mesh> transform_meshes;
-map<string, texture> transform_textures;
+/*
+effect blend;
+array<texture, 2> blend_textures;
+texture blend_map;
+mesh blend_cube;
+*/
 
 // Cameras
 int cam_choice = 1;
@@ -22,7 +26,6 @@ double cursor_y = 0.0;
 target_camera target_cam;
 
 // Lights
-directional_light light;
 vector<point_light> points(3);
 vector<spot_light> spots(3);
 
@@ -31,7 +34,7 @@ shadow_map shadow;
 effect shadow_eff;
 
 bool initialise() 
-{
+{ 
 	// Set input mode - hide the cursor
 	glfwSetInputMode(renderer::get_window(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	// Capture initial mouse position
@@ -40,41 +43,72 @@ bool initialise()
 	return true;
 }
 
-bool load_content()
+bool load_geometry()
 {
-	// Create shadow map- use screen size
-	shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
-
-	// Load geometry
+	// Plane
 	meshes["plane"] = mesh(geometry_builder::create_plane());
 	meshes["plane"].get_transform().scale *= 2;
 	textures["plane"] = texture("textures/231.jpg");
 	normal_maps["plane"] = texture("textures/231_norm.jpg");
-	//dissolve = texture("textures/blend_map2.jpg");
 
+	// Box
 	meshes["box"] = mesh(geometry_builder::create_box(vec3(5.0f, 5.0f, 5.0f)));
 	meshes["box"].get_transform().translate(vec3(-15.0f, 2.5f, -40.0f));
 	textures["box"] = texture("textures/237.jpg");
 	normal_maps["box"] = texture("textures/237_norm.jpg");
 
-	material mat;
-	mat.set_emissive(vec4(0.2f, 0.2f, 0.2f, 1.0f));
-	mat.set_specular(vec4(0.8f, 0.8f, 1.0f, 1.0f));
-	mat.set_shininess(20.0f);
-	meshes["box"].set_material(mat);
+	temp_mat.set_specular(vec4(0.8f, 0.8f, 1.0f, 1.0f));
+	temp_mat.set_shininess(20.0f);
+	meshes["box"].set_material(temp_mat);
 
+	// Sphere
 	meshes["sphere"] = mesh(geometry_builder::create_sphere(50, 50));
 	meshes["sphere"].get_transform().scale *= 10;
-	meshes["sphere"].get_transform().translate(vec3(10.0f, 3.0f, -20.0f));
+	meshes["sphere"].get_transform().translate(vec3(-10.0f, 30.0f, -30.0f));
 	textures["sphere"] = texture("textures/225.jpg");
 	normal_maps["sphere"] = texture("textures/225_norm.jpg");
 
-	mat.set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
-	mat.set_specular(vec4(0.5f, 0.0f, 0.5f, 1.0f));
-	mat.set_shininess(40.0f);
-	mat.set_diffuse(vec4(0.2f, 0.0f, 0.2f, 1.0f));
-	meshes["sphere"].set_material(mat);
+	temp_mat.set_specular(vec4(0.5f, 0.0f, 0.5f, 1.0f));
+	temp_mat.set_shininess(40.0f);
+	meshes["sphere"].set_material(temp_mat);
 
+	// Load geometry for transform hierarchy spheres
+	meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
+	meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
+	meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
+
+	meshes["sphere_1"].get_transform().translate(vec3(-10.0f, 25.0f, -15.0f));
+	meshes["sphere_2"].get_transform().translate(vec3(-10.0f, 20.0f, -14.0f));
+	meshes["sphere_3"].get_transform().translate(vec3(-10.0f, 0.0f, 0.0f));
+
+	textures["sphere_1"] = texture("textures/241.jpg");
+	textures["sphere_2"] = texture("textures/241.jpg");
+	textures["sphere_3"] = texture("textures/241.jpg");
+
+	normal_maps["sphere_1"] = texture("textures/241_norm.jpg");
+	normal_maps["sphere_2"] = texture("textures/241_norm.jpg");
+	normal_maps["sphere_3"] = texture("textures/241_norm.jpg");
+
+	temp_mat.set_specular(vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	temp_mat.set_shininess(0.1f);
+	meshes["sphere_1"].set_material(temp_mat);
+	meshes["sphere_2"].set_material(temp_mat);
+	meshes["sphere_3"].set_material(temp_mat);
+
+	/*
+	// Blended texture cube
+	blend_cube = mesh(geometry_builder::create_box(vec3(5.0f, 5.0f, 5.0f)));
+	blend_cube.get_transform().translate(vec3(-20.0f, 2.5f, -40.0f));
+	blend_textures[0] = texture("textures/237.jpg");
+	blend_textures[0] = texture("textures/241.jpg");
+	blend_map = texture("textures/blend_map2.jpg");
+	*/
+
+	return true;
+}
+
+bool create_lights()
+{
 	// Set lighting values for point lights
 	points[0].set_position(vec3(-25.0f, 20.0f, -15.0f));
 	points[0].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
@@ -84,7 +118,7 @@ bool load_content()
 	points[1].set_light_colour(vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	points[1].set_range(20.f);
 
-	// General light
+	// "General light"
 	points[2].set_position(vec3(-10.0f, 30.0f, -15.0f));
 	points[2].set_light_colour(vec4(1.0f, 0.9f, 0.9f, 1.0f));
 	points[2].set_range(50.f);
@@ -108,58 +142,52 @@ bool load_content()
 	spots[2].set_direction(vec3(-1.0f, -1.0f, -1.0f));
 	spots[2].set_power(0.5f);
 
-	/*
-	// Create transform meshes
-	material sphere_mat;
-	sphere_mat.set_diffuse(vec4(1.0f, 0.0f, 0.0f, 1.0f));
-	transform_meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
-	transform_meshes["sphere_1"].set_material(sphere_mat);
-	transform_meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
-	transform_meshes["sphere_1"].set_material(sphere_mat);
-	transform_meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
-	transform_meshes["sphere_1"].set_material(sphere_mat);
+	return true;
+}
 
-	transform_meshes["sphere_1"].get_transform().translate(vec3(0.0f, 2.0f, 0.0f));
-	transform_meshes["sphere_2"].get_transform().translate(vec3(0.0f, 0.0f, 2.0f));
-	transform_meshes["sphere_3"].get_transform().translate(vec3(0.0f, 2.0f, 0.0f));
-
-	transform_textures["sphere_1"] = texture("textures/jade-stone.jpg");
-	transform_textures["sphere_2"] = texture("textures/stones.jpg");
-	transform_textures["sphere_3"] = texture("textures/jade-stone.jpg");
-	*/
-
-	meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
-	meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
-	meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
-
-	meshes["sphere_1"].get_transform().translate(vec3(-10.0f, 25.0f, -15.0f));
-	meshes["sphere_2"].get_transform().translate(vec3(-10.0f, 20.0f, -14.0f));
-	meshes["sphere_3"].get_transform().translate(vec3(-10.0f, 0.0f, 0.0f));
-
-	textures["sphere_1"] = texture("textures/jade-stone.jpg");
-	textures["sphere_2"] = texture("textures/stones.jpg");
-	textures["sphere_3"] = texture("textures/jade-stone.jpg");
-
+bool load_shaders()
+{
 	// Load in shaders
 	eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
+	eff.add_shader("shaders/basic.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_point.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_shadow.frag", GL_FRAGMENT_SHADER);
+	eff.add_shader("shaders/part_normal_map.frag", GL_FRAGMENT_SHADER);
+
+	/*
+
+	Couldn't use the vector due to indecipherable error
+
 	vector<string> frag_shaders
-	{ 
-		"shaders/basic.frag",
-		"shaders/part_point.frag", 
-		"shaders/part_spot.frag", 
-		"shaders/part_shadow.frag",
-		//"shaders/part_normal_map.frag",
-		//"shaders/part_direction.frag"
+	{
+	"shaders/basic.frag",
+	"shaders/part_point.frag",
+	"shaders/part_spot.frag",
+	"shaders/part_shadow.frag",
+	"shaders/part_normal_map.frag"
 	};
-	eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
+	*/
 
 	shadow_eff.add_shader("shaders/basic.vert", GL_VERTEX_SHADER);
-	shadow_eff.add_shader(frag_shaders, GL_FRAGMENT_SHADER);
-	 
-	// Build effects
-	eff.build();
-	shadow_eff.build();
+	shadow_eff.add_shader("shaders/basic.frag", GL_FRAGMENT_SHADER);
+	shadow_eff.add_shader("shaders/part_point.frag", GL_FRAGMENT_SHADER);
+	shadow_eff.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER);
+	shadow_eff.add_shader("shaders/part_shadow.frag", GL_FRAGMENT_SHADER);
+	shadow_eff.add_shader("shaders/part_normal_map.frag", GL_FRAGMENT_SHADER);
 
+	/*
+	blend.add_shader("shaders/blend.vert", GL_VERTEX_SHADER);
+	blend.add_shader("shaders/blend.frag", GL_FRAGMENT_SHADER);
+	blend.add_shader("shaders/part_point.frag", GL_FRAGMENT_SHADER);
+	blend.add_shader("shaders/part_spot.frag", GL_FRAGMENT_SHADER);
+	*/
+
+	return true;
+}
+
+bool set_cameras()
+{
 	// Set free camera properties
 	free_cam.set_position(vec3(0.0f, 10.0f, 10.0f));
 	free_cam.set_target(meshes["box"].get_transform().position);
@@ -167,20 +195,31 @@ bool load_content()
 
 	// Set target camera properties
 	target_cam.set_position(vec3(-100.0f, 10.0f, -10.0f));
-	target_cam.set_target(meshes["sphere"].get_transform().position + vec3(0.0f, 30.0f, 0.0f));
+	target_cam.set_target(meshes["sphere"].get_transform().position);
 	target_cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
 
 	return true;
 }
 
-
-bool update(float delta_time) 
+bool load_content()
 {
-	// Rotate the transform hierarchy spheres
-	meshes["sphere_1"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
-	meshes["sphere_2"].get_transform().rotate(vec3(0.0f, 0.0f, delta_time));
-	meshes["sphere_3"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
+	// Create shadow map
+	shadow = shadow_map(renderer::get_screen_width(), renderer::get_screen_height());
 
+	load_geometry();
+	create_lights();
+	load_shaders();
+	set_cameras();
+
+	// Build effects
+	eff.build();
+	shadow_eff.build();
+
+	return true;
+}
+
+bool update_active_camera(float delta_time)
+{
 	// Update the camera
 	if (cam_choice == 1)
 	{
@@ -248,6 +287,18 @@ bool update(float delta_time)
 		cam_choice = 2;
 	}
 
+	return true;
+}
+
+bool update(float delta_time) 
+{
+	// Rotate the transform hierarchy spheres
+	meshes["sphere_1"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
+	meshes["sphere_2"].get_transform().rotate(vec3(0.0f, 0.0f, delta_time));
+	meshes["sphere_3"].get_transform().rotate(vec3(0.0f, delta_time, 0.0f));
+
+	update_active_camera(delta_time);
+
 	// Update the shadow map light_position from the spot light
 	shadow.light_position = spots[0].get_position();
 	// do the same for light_dir property
@@ -256,6 +307,7 @@ bool update(float delta_time)
 	return true;
 }
 
+// Function that renders the shadow map
 bool render_shadow_map()
 {
 	// Set render target to shadow map
@@ -265,10 +317,13 @@ bool render_shadow_map()
 	// Set face cull mode to front
 	glCullFace(GL_FRONT);
 
-	mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
-
 	// Bind shader
 	renderer::bind(shadow_eff);
+
+	// Create MVP matrix
+	mat4 MVP;
+	mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
+	auto V = shadow.get_view();
 
 	for (auto &e : meshes)
 	{
@@ -276,10 +331,7 @@ bool render_shadow_map()
 		{
 			auto this_mesh = e.second;
 
-			// Create MVP matrix (view matrix from shadow map)
-			mat4 MVP;
 			mat4 M = this_mesh.get_transform().get_transform_matrix();
-			auto V = shadow.get_view();
 			MVP = LightProjectionMat * V * M;
 
 			// Set MVP matrix uniform
@@ -292,6 +344,46 @@ bool render_shadow_map()
 		}
 	}
 }
+
+/*
+bool render_blend_cube()
+{
+	// Bind shader
+	renderer::bind(blend);
+
+	// Create MVP matrix
+	auto M = blend_cube.get_transform().get_transform_matrix();
+	mat4 PV;
+	// Get projection and view matrix from active camera
+	if (cam_choice == 1)
+	{
+		PV = free_cam.get_projection() * free_cam.get_view();
+
+	}
+	else if (cam_choice == 2)
+	{
+		PV = target_cam.get_projection() * target_cam.get_view();
+	}
+	auto MVP = PV * M;
+
+	// Set MVP matrix uniform
+	glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
+
+	renderer::bind(blend_textures[0], 0);
+	renderer::bind(blend_textures[1], 1);
+	renderer::bind(blend_map, 2);
+
+	// Set the uniform values for textures
+	static int tex_indices[] = { 0, 1 };
+	glUniform1iv(eff.get_uniform_location("tex"), 2, tex_indices);
+	glUniform1i(eff.get_uniform_location("blend"), 2);
+
+	// Render the mesh
+	renderer::render(blend_cube);
+
+	return true;
+}
+*/
 
 bool render() 
 {
@@ -312,6 +404,7 @@ bool render()
 	{
 		auto this_mesh = e.second;
 
+		// Get projection and view matrix from active camera
 		if (cam_choice == 1)
 		{
 			PV = free_cam.get_projection() * free_cam.get_view();
@@ -322,9 +415,10 @@ bool render()
 			PV = target_cam.get_projection() * target_cam.get_view();
 		}
 		
-		// Create MVP matrix
+		// Set transformation matrix
 		M = this_mesh.get_transform().get_transform_matrix();
 
+		// Calculate transformation matrices for transformation hierarchy
 		if (e.first == "sphere_2")
 		{
 			M = meshes["sphere_1"].get_transform().get_transform_matrix() * 
@@ -339,26 +433,21 @@ bool render()
 
 		MVP = PV * M;
 
-		// Set MVP matrix uniform
-		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
-
 		// Create lightMVP uniform
-		mat4 lightMVP;
+		mat4 light_MVP;
 		auto lV = shadow.get_view();
 		mat4 LightProjectionMat = perspective<float>(90.f, renderer::get_screen_aspect(), 0.1f, 1000.f);
-		// Multiply together with LightProjectionMat
-		lightMVP = LightProjectionMat * lV * M;
+		light_MVP = LightProjectionMat * lV * M;
+
+		// Set lightMVP matrix uniform
+		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(light_MVP));
 		// Set MVP matrix uniform
-		glUniformMatrix4fv(eff.get_uniform_location("lightMVP"), 1, GL_FALSE, value_ptr(lightMVP));
-
-		// Bind and set textures
-		renderer::bind(textures[e.first], 0);
-		glUniform1i(eff.get_uniform_location("tex"), 0);
-
+		glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
 		// Set M matrix uniform
 		glUniformMatrix4fv(eff.get_uniform_location("M"), 1, GL_FALSE, value_ptr(M));
 		// Set N matrix uniform - remember - 3x3 matrix
 		glUniformMatrix3fv(eff.get_uniform_location("N"), 1, GL_FALSE, value_ptr(this_mesh.get_transform().get_normal_matrix()));
+
 		// Bind material
 		renderer::bind(this_mesh.get_material(), "mat");
 		// Bind point lights
@@ -366,19 +455,7 @@ bool render()
 		// Bind spot lights
 		renderer::bind(spots, "spots");
 
-		/*
-		// Bind light
-		renderer::bind(light, "light");
-		*/
-
-		/*
-		// Bind normal_map
-		renderer::bind(normalMaps[e.first], 1);
-		// Set normal_map uniform
-		glUniform1i(eff.get_uniform_location("normalMap"), 1);
-		*/
-
-		// Set eye position - Get this from active camera
+		// Set eye position from active camera
 		if (cam_choice == 1)
 		{
 			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(free_cam.get_position()));
@@ -388,10 +465,17 @@ bool render()
 			glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(target_cam.get_position()));
 		}
 
-		// Bind shadow map texture - use texture unit 1
-		renderer::bind(shadow.buffer->get_depth(), 1);
-		// Set the shadow_map uniform
-		glUniform1i(eff.get_uniform_location("shadow_map"), 1);
+		// Bind and set texture uniform
+		renderer::bind(textures[e.first], 0);
+		glUniform1i(eff.get_uniform_location("tex"), 0);
+
+		// Bind and set normal_map uniform
+		renderer::bind(normal_maps[e.first], 1);
+		glUniform1i(eff.get_uniform_location("normal_map"), 1);
+
+		// Bind shadow map texture and set uniform
+		renderer::bind(shadow.buffer->get_depth(), 2);
+		glUniform1i(eff.get_uniform_location("shadow_map"), 2);
 
 		// Render geometry
 		renderer::render(this_mesh);
@@ -403,6 +487,7 @@ bool render()
 bool ren()
 {
 	render_shadow_map();
+	// render_blend_cube();
 	render();
 	
 	return true;
