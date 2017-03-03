@@ -310,6 +310,12 @@ bool update(float delta_time)
 // Function that renders the shadow map
 bool render_shadow_map()
 {
+	/*
+	
+	To do shadows for multiple lights, need to make shadow map for each light and have shaders accept all these shadow maps
+	
+	*/
+
 	// Set render target to shadow map
 	renderer::set_render_target(shadow);
 	// Clear depth buffer bit
