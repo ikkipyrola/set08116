@@ -41,7 +41,8 @@ layout(location = 3) in vec4 tex_weight;
 // Outgoing colour
 layout(location = 0) out vec4 colour;
 
-void main() {
+void main() 
+{
   // Calculate ambient component
   vec4 ambient = mat.diffuse_reflection * light.ambient_intensity;
   // Calculate diffuse component

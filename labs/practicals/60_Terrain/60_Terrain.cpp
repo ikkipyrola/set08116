@@ -5,6 +5,10 @@ using namespace std;
 using namespace graphics_framework;
 using namespace glm;
 
+mesh skybox;
+effect sky_eff;
+cubemap cube_map;
+
 mesh terr;
 effect eff;
 free_camera cam;
@@ -81,7 +85,8 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
   normals.resize(positions.size());
 
   // Part 2 - Calculate normals for the height map
-  for (unsigned int i = 0; i < indices.size() / 3; ++i) {
+  for (unsigned int i = 0; i < indices.size() / 3; ++i) 
+  {
     // Get indices for the triangle
     auto idx1 = indices[i * 3];
     auto idx2 = indices[i * 3 + 1];
@@ -93,18 +98,18 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 
     // Normal is normal(cross product) of these two sides
     // *********************************
-	auto n = normalize(cross(side2, side1));
+	vec3 n = normalize(cross(side2, side1));
     // Add to normals in the normal buffer using the indices for the triangle
-
-
-
+	normals[idx1] = normals[idx1] + n;
+	normals[idx2] = normals[idx2] + n;
+	normals[idx3] = normals[idx3] + n;
     // *********************************
   }
 
   // Normalize all the normals
   for (auto &n : normals) {
     // *********************************
-
+	  n = normalize(n);
     // *********************************
   }
 
@@ -126,11 +131,11 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 
       // *********************************
       // Sum the components of the vector
-
+	  float total = tex_weight.x + tex_weight.y + tex_weight.z + tex_weight.a;
       // Divide weight by sum
-
+	  tex_weight = tex_weight / total;
       // Add tex weight to weights
-
+	  tex_weights.push_back(tex_weight);
       // *********************************
     }
   }
@@ -146,7 +151,9 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
   delete[] data;
 }
 
-bool load_content() {
+bool load_content() 
+{
+
   // Geometry to load into
   geometry geom;
 
@@ -175,7 +182,7 @@ bool load_content() {
   terr.get_material().set_specular(vec4(0.0f, 0.0f, 0.0f, 1.0f));
   terr.get_material().set_shininess(20.0f);
   terr.get_material().set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
-
+   
   // terrian trextures
   tex[0] = texture("textures/sand.jpg");
   tex[1] = texture("textures/grass.jpg");
@@ -185,12 +192,13 @@ bool load_content() {
   // Set camera properties
   cam.set_position(vec3(0.0f, 5.0f, 10.0f));
   cam.set_target(vec3(0.0f, 0.0f, 0.0f));
-  cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f);
+  cam.set_projection(quarter_pi<float>(), renderer::get_screen_aspect(), 0.1f, 1000.0f); 
   glfwSetInputMode(renderer::get_window(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   return true;
 }
 
-bool update(float delta_time) {
+bool update(float delta_time) 
+{
   // The ratio of pixels to rotation - remember the fov
   static double ratio_width = quarter_pi<float>() / static_cast<float>(renderer::get_screen_width());
   static double ratio_height =
@@ -227,13 +235,17 @@ bool update(float delta_time) {
   cam.move(translation);
   // Update the camera
   cam.update(delta_time);
+
+  skybox.get_transform().position = cam.get_position();
+
   // Update cursor pos
   cursor_x = current_x;
   cursor_y = current_y;
   return true;
 }
 
-bool render() {
+bool render() 
+{
   // Bind effect
   renderer::bind(eff);
   // Create MVP matrix
@@ -249,9 +261,9 @@ bool render() {
   glUniformMatrix3fv(eff.get_uniform_location("N"), 1, GL_FALSE, value_ptr(terr.get_transform().get_normal_matrix()));
   // *********************************
   // Set eye_pos uniform to camera position
-
+  glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(cam.get_position()));
   // *********************************
-   //Bind Terrian Material
+   //Bind Terrain Material
   renderer::bind(terr.get_material(), "mat");
   // Bind Light
   renderer::bind(light, "light");
@@ -260,14 +272,14 @@ bool render() {
   glUniform1i(eff.get_uniform_location("tex[0]"), 0);
   // *********************************
    //Bind Tex[1] to TU 1, set uniform
-
-
+  renderer::bind(tex[1], 1);
+  glUniform1i(eff.get_uniform_location("tex[1]"), 1);
   // Bind Tex[2] to TU 2, set uniform
-
-
+  renderer::bind(tex[2], 2);
+  glUniform1i(eff.get_uniform_location("tex[2]"), 2);
   // Bind Tex[3] to TU 3, set uniform
-
-
+  renderer::bind(tex[3], 3);
+  glUniform1i(eff.get_uniform_location("tex[3]"), 3);
   // *********************************
   // Render terrain
   renderer::render(terr);
@@ -275,7 +287,8 @@ bool render() {
   return true;
 }
 
-void main() {
+void main() 
+{
   // Create application
   app application("60_Terrain");
   // Set methods
