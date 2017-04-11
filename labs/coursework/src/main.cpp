@@ -70,11 +70,11 @@ bool load_geometry()
 
 	temp_mat.set_specular(vec4(0.5f, 0.0f, 0.5f, 1.0f));
 	temp_mat.set_shininess(40.0f);
-	meshes["sphere"].set_material(temp_mat);
-
+	meshes["sphere"].set_material(temp_mat); 
+	 
 	// Load geometry for transform hierarchy spheres
 	meshes["sphere_1"] = mesh(geometry_builder::create_sphere(50, 50));
-	meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50));
+	meshes["sphere_2"] = mesh(geometry_builder::create_sphere(50, 50)); 
 	meshes["sphere_3"] = mesh(geometry_builder::create_sphere(50, 50));
 
 	meshes["sphere_1"].get_transform().translate(vec3(-10.0f, 25.0f, -15.0f));

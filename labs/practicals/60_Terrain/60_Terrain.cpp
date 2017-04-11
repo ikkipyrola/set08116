@@ -7,6 +7,7 @@ using namespace glm;
 
 mesh skybox;
 effect sky_eff;
+effect extra_eff;
 cubemap cube_map;
 
 mesh terr;
@@ -154,6 +155,31 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 bool load_content() 
 {
 
+	// -------------------------------------------------------------------
+
+	// Create box geometry for skybox
+	skybox = mesh(geometry_builder::create_box(vec3(1.0f, 1.0f, 1.0f)));
+	// Scale box by 100
+	skybox.get_transform().scale *= 100.0f;
+	// Load the cubemap
+	array<string, 6> filenames = { "textures/miramar_ft.tga", "textures/miramar_bk.tga", "textures/miramar_up.tga",
+		"textures/miramar_dn.tga", "textures/miramar_rt.tga", "textures/miramar_lf.tga" };
+	// Create cube_map
+	cube_map = cubemap(filenames);
+	// Load in skybox effect
+	sky_eff.add_shader("shaders/skybox.vert", GL_VERTEX_SHADER);
+	sky_eff.add_shader("shaders/skybox.frag", GL_FRAGMENT_SHADER);
+	// Build effect
+	sky_eff.build();
+
+	// Load in shaders
+	extra_eff.add_shader("57_Skybox/shader.vert", GL_VERTEX_SHADER);
+	extra_eff.add_shader("57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
+	// Build effect
+	extra_eff.build();
+
+	// -------------------------------------------------------------------
+
   // Geometry to load into
   geometry geom;
 
@@ -197,7 +223,7 @@ bool load_content()
   return true;
 }
 
-bool update(float delta_time) 
+bool update(float delta_time)
 {
   // The ratio of pixels to rotation - remember the fov
   static double ratio_width = quarter_pi<float>() / static_cast<float>(renderer::get_screen_width());
@@ -236,7 +262,12 @@ bool update(float delta_time)
   // Update the camera
   cam.update(delta_time);
 
+  // -------------------------------------------------------------------
+
+  // Set skybox position to camera position (camera in centre of skybox)
   skybox.get_transform().position = cam.get_position();
+
+  // -------------------------------------------------------------------
 
   // Update cursor pos
   cursor_x = current_x;
@@ -246,12 +277,39 @@ bool update(float delta_time)
 
 bool render() 
 {
+	auto V = cam.get_view();
+	auto P = cam.get_projection();
+
+	// -------------------------------------------------------------------
+
+	// Disable depth test, depth mask, face culling
+	glDisable(GL_DEPTH_TEST);
+	glDepthMask(GL_FALSE);
+	glDisable(GL_CULL_FACE);
+	// Bind skybox effect
+	renderer::bind(sky_eff);
+	// Calculate MVP for the skybox
+	auto M_sky = skybox.get_transform().get_transform_matrix();
+	auto MVP_sky = P * V * M_sky;
+	// Set MVP matrix uniform
+	glUniformMatrix4fv(extra_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sky));
+	// Set cubemap uniform
+	renderer::bind(cube_map, 0);
+	glUniform1i(sky_eff.get_uniform_location("cubemap"), 0);
+	// Render skybox
+	renderer::render(skybox);
+	// Enable depth test,depth mask,face culling
+	glEnable(GL_DEPTH_TEST);
+	glDepthMask(GL_TRUE);
+	glEnable(GL_CULL_FACE);
+
+	// -------------------------------------------------------------------
+
+
   // Bind effect
   renderer::bind(eff);
   // Create MVP matrix
   auto M = terr.get_transform().get_transform_matrix();
-  auto V = cam.get_view();
-  auto P = cam.get_projection();
   auto MVP = P * V * M;
   // Set MVP matrix uniform
   glUniformMatrix4fv(eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
