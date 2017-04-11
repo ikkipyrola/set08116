@@ -25,7 +25,8 @@ layout(location = 2) out vec2 tex_coord;
 // Outgoing tex_weight
 layout(location = 3) out vec4 tex_weight;
 
-void main() {
+void main() 
+{
   // Calculate screen position
   gl_Position = MVP * vec4(position_in, 1.0);
   // Calculate vertex world position

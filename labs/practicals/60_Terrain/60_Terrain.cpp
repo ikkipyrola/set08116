@@ -10,11 +10,19 @@ effect sky_eff;
 effect extra_eff;
 cubemap cube_map;
 
-mesh terr;
+mesh terr; 
 effect eff;
 free_camera cam;
 directional_light light;
 texture tex[4];
+
+double generate_perlin(double x, double y, double z)
+{
+
+
+	return 0.0;
+}
+
 
 void generate_terrain(geometry &geom, const texture &height_map, unsigned int width, unsigned int depth,
                       float height_scale) 

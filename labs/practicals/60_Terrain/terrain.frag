@@ -3,14 +3,16 @@
 // Requires weighted_texture.frag
 
 // A directional light structure
-struct directional_light {
+struct directional_light 
+{
   vec4 ambient_intensity;
   vec4 light_colour;
   vec3 light_dir;
 };
 
 // A material structure
-struct material {
+struct material 
+{
   vec4 emissive;
   vec4 diffuse_reflection;
   vec4 specular_reflection;
@@ -43,6 +45,8 @@ layout(location = 0) out vec4 colour;
 
 void main() 
 {
+  colour = vec4(0.1, 0.0, 0.2, 1.0);
+  
   // Calculate ambient component
   vec4 ambient = mat.diffuse_reflection * light.ambient_intensity;
   // Calculate diffuse component
@@ -60,6 +64,6 @@ void main()
   // Calculate primary colour component
   vec4 primary = mat.emissive + ambient + diffuse;
   // Calculate final colour
-  colour = primary * tex_colour + specular;
+  colour += primary * tex_colour + specular;
   colour.a = 1.0;
 }
