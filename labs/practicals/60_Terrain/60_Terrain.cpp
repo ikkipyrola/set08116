@@ -10,15 +10,87 @@ effect sky_eff;
 effect extra_eff;
 cubemap cube_map;
 
+mesh example_sphere;
+effect example_sphere_eff;
+
 mesh terr; 
 effect eff;
 free_camera cam;
 directional_light light;
 texture tex[4];
 
+// Hash lookup table as defined by Ken Perlin, all numbers from 0-255 inclusive.
+int static permutation[] = { 151,160,137,91,90,15,
+131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
+190, 6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,
+88,237,149,56,87,174,20,125,136,171,168, 68,175,74,165,71,134,139,48,27,166,
+77,146,158,231,83,111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,
+102,143,54, 65,25,63,161, 1,216,80,73,209,76,132,187,208, 89,18,169,200,196,
+135,130,116,188,159,86,164,100,109,198,173,186, 3,64,52,217,226,250,124,123,
+5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,17,182,189,28,42,
+223,183,170,213,119,248,152, 2,44,154,163, 70,221,153,101,155,167, 43,172,9,
+129,22,39,253, 19,98,108,110,79,113,224,232,178,185, 112,104,218,246,97,228,
+251,34,242,193,238,210,144,12,191,179,162,241, 81,51,145,235,249,14,239,107,
+49,192,214, 31,181,199,106,157,184, 84,204,176,115,121,50,45,127, 4,150,254,
+138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180
+};
+
+// Doubled to avoid overflow
+int static p[512];
+
+void Perlin()
+{
+	for (int i = 0; i < 512; i++)
+	{
+		p[i] = permutation[i%256];
+	}
+
+}
+
+// Fade function as defined by Ken Perlin (6t^5 - 15t^4 + 10t^3)
+// Smooths final output by easing coordinate values towards integral values
+double fade(double t)
+{
+	return 6 * pow(t, 5) - 15 * pow(t, 4) + 10 * pow(t, 3);
+}
+
+// Gradient vectors
+vec2 grads[] = { {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
+
+double dot_prod(int i, double x, double y)
+{
+	return grads[i][0] * x + grads[i][1] * y;
+}
+
 double generate_perlin(double x, double y, double z)
 {
+	// Calculate unit coordinates
+	int unit_x = (int)floor(x);
+	int unit_y = (int)floor(y);
+	//int unit_x1 = (int)floor(x + 1.0);
+	//int unit_y2 = (int)floor(y + 1.0);
 
+	// Location 0.0 to 1.0 within unit square
+	double relative_x = x - floor(x);
+	double relative_y = y - floor(y);
+
+	double u = fade(relative_x);
+	double v = fade(relative_y);
+
+	// using unit coordinate, lookup a gradient
+	int aa, ab, ba, bb;
+	aa = p[unit_x +     p[unit_y    ]];
+	ab = p[unit_x +     p[unit_y + 1]];
+	ba = p[unit_x + 1 + p[unit_y    ]];
+	bb = p[unit_x + 1 + p[unit_y + 1]];
+
+	/*
+	"PUTTING IT ALL TOGETHER" HERE
+
+	EXAMPLE USE OF DOT PROD
+	double dot_x = dot_prod(aa & 7, relative_x, relative_y);
+	double dot_y = dot_prod(bb & 7, relative_x, relative_y);
+	*/
 
 	return 0.0;
 }
@@ -164,6 +236,7 @@ bool load_content()
 {
 
 	// -------------------------------------------------------------------
+	// SKYBOX
 
 	// Create box geometry for skybox
 	skybox = mesh(geometry_builder::create_box(vec3(1.0f, 1.0f, 1.0f)));
@@ -181,10 +254,21 @@ bool load_content()
 	sky_eff.build();
 
 	// Load in shaders
-	extra_eff.add_shader("57_Skybox/shader.vert", GL_VERTEX_SHADER);
-	extra_eff.add_shader("57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
+	extra_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.vert", GL_VERTEX_SHADER);
+	extra_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
 	// Build effect
 	extra_eff.build();
+
+	// -------------------------------------------------------------------
+
+	example_sphere = mesh(geometry_builder::create_sphere(20, 20));
+	example_sphere.get_transform().scale *= 2.0f;
+	// TODO: TRANSLATE NOT WORKING
+	example_sphere.get_transform().translate(vec3(-10.0f, 30.0f, -30.0f));
+
+	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.vert", GL_VERTEX_SHADER);;
+	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
+	example_sphere_eff.build();
 
 	// -------------------------------------------------------------------
 
@@ -217,7 +301,7 @@ bool load_content()
   terr.get_material().set_shininess(20.0f);
   terr.get_material().set_emissive(vec4(0.0f, 0.0f, 0.0f, 1.0f));
    
-  // terrian trextures
+  // terrian textures
   tex[0] = texture("textures/sand.jpg");
   tex[1] = texture("textures/grass.jpg");
   tex[2] = texture("textures/stone.jpg");
@@ -349,6 +433,19 @@ bool render()
   // *********************************
   // Render terrain
   renderer::render(terr);
+
+  // -------------------------------------------------------------------
+
+  renderer::bind(example_sphere_eff);
+
+  auto M_sphere = example_sphere.get_transform().get_transform_matrix();
+  auto MVP_sphere = P * V * M;
+
+  glUniformMatrix4fv(example_sphere_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
+
+  renderer::render(example_sphere);
+
+  // -------------------------------------------------------------------
 
   return true;
 }
