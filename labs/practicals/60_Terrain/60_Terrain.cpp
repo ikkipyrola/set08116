@@ -10,6 +10,10 @@ effect sky_eff;
 effect extra_eff;
 cubemap cube_map;
 
+// Which one
+GLuint perlin_texture;
+texture perlin;
+
 mesh example_sphere;
 effect example_sphere_eff;
 
@@ -57,9 +61,16 @@ double fade(double t)
 // Gradient vectors
 vec2 grads[] = { {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
 
+// (Same as grad in flafla code)
 double dot_prod(int i, double x, double y)
 {
 	return grads[i][0] * x + grads[i][1] * y;
+}
+
+// fade, dot_prod, dot_prod
+double double_lerp (double t, double a, double b) 
+{
+	return a + t * (b - a);
 }
 
 double generate_perlin(double x, double y, double z)
@@ -92,7 +103,18 @@ double generate_perlin(double x, double y, double z)
 	double dot_y = dot_prod(bb & 7, relative_x, relative_y);
 	*/
 
-	return 0.0;
+	// Values to interpolate between
+	double lerping_xa, lerping_ya, lerping_xb, lerping_yb;
+	lerping_xa = dot_prod(aa, relative_x, relative_y);
+	lerping_xb = dot_prod(ab, relative_x - 1, relative_y);
+	lerping_ya = dot_prod(bb, relative_x, relative_y - 1);
+	lerping_yb = dot_prod(ba, relative_x - 1, relative_y - 1);
+
+	// linear interpolation
+	double y1 = double_lerp(u, aa, ba),
+	double y2 = double_lerp(u, ab, bb);
+	
+	return double_lerp(v, y1, y2);
 }
 
 
