@@ -98,10 +98,10 @@ bool load_content() {
   light.set_direction(vec3(1.0f, 1.0f, -1.0f));
 
   // Load in shaders
-  eff.add_shader("48_Phong_Shading/phong.vert", GL_VERTEX_SHADER);
-  eff.add_shader("48_Phong_Shading/phong.frag", GL_FRAGMENT_SHADER);
-  tex_eff.add_shader("27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
-  tex_eff.add_shader("27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/48_Phong_Shading/phong.vert", GL_VERTEX_SHADER);
+  eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/48_Phong_Shading/phong.frag", GL_FRAGMENT_SHADER);
+  tex_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+  tex_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.frag", GL_FRAGMENT_SHADER);
   // Build effects
   eff.build();
   tex_eff.build();
@@ -158,11 +158,11 @@ bool update(float delta_time) {
 bool render() {
   // *********************************
   // Set render target to frame buffer
-
+	renderer::set_render_target(frame);
   // Set clear colour to white
-
+	renderer::setClearColour(0.0f, 0.0f, 0.0f);
   // Clear frame
-
+	renderer::clear();
   // *********************************
   // Render meshes
   for (auto &e : meshes) {
@@ -203,24 +203,24 @@ bool render() {
   renderer::setClearColour(0.0f, 1.0f, 1.0f);
   // *********************************
   // Set render target back to the screen
-
+  renderer::set_render_target();
   // bind the tex effect
-
+  renderer::bind(tex_eff);
   // Get M from render_cube
-
+  auto M = render_cube.get_transform().get_transform_matrix();
   // get V and P from Cam 2
-
-
+  auto V = cam2.get_view();
+  auto P = cam2.get_projection();
   // Build MVP
-
+  auto MVP = P * V * M;
   // Set MVP matrix uniform
-
+  glUniformMatrix4fv(tex_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP));
   // Bind texture from frame buffer
-
+  renderer::bind(frame.get_frame(), 1);
   // Set the tex uniform
-
+  glUniform1i(tex_eff.get_uniform_location("tex"), 1);
   // Render the render cube
-
+  renderer::render(render_cube);
   // *********************************
   return true;
 }

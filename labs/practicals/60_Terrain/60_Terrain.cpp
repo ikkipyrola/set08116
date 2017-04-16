@@ -24,6 +24,10 @@ free_camera cam;
 directional_light light;
 texture tex[4];
 
+effect glitch_eff;
+frame_buffer frame;
+geometry screen_quad;
+
 /*
 
 // Hash lookup table as defined by Ken Perlin, all numbers from 0-255 inclusive.
@@ -267,7 +271,24 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 
 bool load_content()
 {
-	// Skybox -------------------------------------------------------------------
+	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
+
+	// Create frame buffer - use screen width and height
+	frame = frame_buffer(renderer::get_screen_width(), renderer::get_screen_height());
+	// Create screen quad
+	vector<vec3> positions{ vec3(-1.0f, -1.0f, 0.0f), vec3(1.0f, -1.0f, 0.0f), vec3(-1.0f, 1.0f, 0.0f),
+		vec3(1.0f, 1.0f, 0.0f) };
+	vector<vec2> tex_coords{ vec2(0.0, 0.0), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
+	screen_quad.add_buffer(positions, BUFFER_INDEXES::POSITION_BUFFER);
+	screen_quad.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
+	screen_quad.set_type(GL_TRIANGLE_STRIP);
+	screen_quad.add_buffer(positions, BUFFER_INDEXES::POSITION_BUFFER);
+	screen_quad.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
+	glitch_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+	glitch_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/glitch.frag", GL_FRAGMENT_SHADER);
+	glitch_eff.build();
+
+	// -=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Create box geometry for skybox
 	skybox = mesh(geometry_builder::create_box(vec3(1.0f, 1.0f, 1.0f)));
@@ -291,9 +312,7 @@ bool load_content()
 
 	example_sphere = mesh(geometry_builder::create_sphere(20, 20));
 	example_sphere.get_transform().scale *= 2.0f;
-	// TODO: TRANSLATE NOT WORKING
-	example_sphere.get_transform().translate(vec3(-10.0f, 30.0f, -30.0f));
-
+	example_sphere.get_transform().translate(vec3(-10.0f, 15.0f, -30.0f));
 	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.vert", GL_VERTEX_SHADER);;
 	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
 	example_sphere_eff.build();
@@ -301,7 +320,7 @@ bool load_content()
 	// Geometry to load into
 	geometry geom;
 
-	// Load height map : http://www.thebest3d.com/dogwaffle/lua/samples.html
+	// Load height map
 	texture height_map("textures/height.jpg");
 
 	// Generate terrain
@@ -403,6 +422,17 @@ bool update(float delta_time)
 
 bool render()
 {
+	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
+
+	// Set render target to frame buffer
+	renderer::set_render_target(frame);
+	// Clear frame
+	renderer::clear();
+
+	// RENDER ALL TO FRAME VVVV
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 	auto V = cam.get_view();
 	auto P = cam.get_projection();
 
@@ -447,9 +477,9 @@ bool render()
 	glUniform3fv(eff.get_uniform_location("eye_pos"), 1, value_ptr(cam.get_position()));
 	
 	glUniform4fv(eff.get_uniform_location("fog_colour"), 1, value_ptr(vec4(fog_colour, 1.0f)));
-	glUniform1f(eff.get_uniform_location("fog_start"), 0.0f);
-	glUniform1f(eff.get_uniform_location("fog_end"), 20.0f);
-	glUniform1f(eff.get_uniform_location("fog_density"), 1.0f);
+	glUniform1f(eff.get_uniform_location("fog_start"), 100.0f);
+	glUniform1f(eff.get_uniform_location("fog_end"), 200.0f);
+	glUniform1f(eff.get_uniform_location("fog_density"), 0.1f);
 	
 	//Bind terrain material
 	renderer::bind(terr.get_material(), "mat");
@@ -464,17 +494,35 @@ bool render()
 	glUniform1i(eff.get_uniform_location("tex[2]"), 2);
 	renderer::bind(tex[3], 3);
 	glUniform1i(eff.get_uniform_location("tex[3]"), 3);
-
+	
 	// Render terrain
 	renderer::render(terr);
 
 	// -=-=-=-=-=-=-=-=-=-=- Example sphere -=-=-=-=-=-=-=-=-=-=-=-
 
 	renderer::bind(example_sphere_eff);
-	auto M_sphere = example_sphere.get_transform().get_transform_matrix();
-	auto MVP_sphere = P * V * M;
+	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
 	glUniformMatrix4fv(example_sphere_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
 	renderer::render(example_sphere);
+
+	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
+
+	// Set render target back to the screen
+	renderer::set_render_target();
+	// bind the tex effect
+	renderer::bind(glitch_eff);
+	// MVP is now the identity matrix
+	auto identity_MVP = mat4(1.0f);
+	// Set MVP matrix uniform
+	glUniformMatrix4fv(glitch_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(identity_MVP));
+	// Bind texture from frame buffer
+	renderer::bind(frame.get_frame(), 4);
+	// Set the tex uniform
+	glUniform1i(glitch_eff.get_uniform_location("tex"), 4);
+	// Render the screen quad
+	renderer::render(screen_quad);
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	return true;
 }
