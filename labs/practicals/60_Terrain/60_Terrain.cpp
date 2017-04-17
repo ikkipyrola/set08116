@@ -1,3 +1,13 @@
+/*
+
+TODO: Not rendering the sphere
+
+TODO: Continue noise
+
+
+*/
+
+
 #include <glm/glm.hpp>
 #include <graphics_framework.h>
 
@@ -11,12 +21,12 @@ effect extra_eff;
 cubemap cube_map;
 vec3 fog_colour = vec3(0.5f, 0.0f, 0.2f);
 
-// TODO: Which one?
-GLuint perlin_texture;
-texture perlin;
 
+frame_buffer perlin;
 mesh example_sphere;
-effect example_sphere_eff;
+effect sphere_eff;
+effect perlin_eff;
+geometry perlin_quad;
 
 mesh terr;
 effect eff;
@@ -37,7 +47,7 @@ int static permutation[] = { 151,160,137,91,90,15,
 88,237,149,56,87,174,20,125,136,171,168, 68,175,74,165,71,134,139,48,27,166,
 77,146,158,231,83,111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,
 102,143,54, 65,25,63,161, 1,216,80,73,209,76,132,187,208, 89,18,169,200,196,
-135,130,116,188,159,86,164,100,109,198,173,186, 3,64,52,217,226,250,124,123,
+135,130,116,188,159,86,164,100,109,198,173,186,3,64,52,217,226,250,124,123,
 5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,17,182,189,28,42,
 223,183,170,213,119,248,152, 2,44,154,163, 70,221,153,101,155,167, 43,172,9,
 129,22,39,253, 19,98,108,110,79,113,224,232,178,185, 112,104,218,246,97,228,
@@ -125,18 +135,51 @@ return double_lerp(v, y1, y2);
 
 */
 
-void generate_terrain(geometry &geom, const texture &height_map, unsigned int width, unsigned int depth,
-	float height_scale)
+/*
+// initPermTexture(GLuint *texID) - create and load a 2D texture for
+// a combined index permutation and gradient lookup table.
+// This texture is used for 2D and 3D noise, both classic and simplex.
+
+void initPermTexture(GLuint *texID)
 {
-	// Contains our position data
+	char *pixels;
+	int i, j;
+
+	glGenTextures(1, texID); // Generate a unique texture ID
+	glBindTexture(GL_TEXTURE_2D, *texID); // Bind the texture to texture unit 0
+
+	char *pixels = (char *)malloc(256 * 256 * 4);
+
+	for (i = 0; i < 256; i++)
+	{
+		for (j = 0; j < 256; j++) 
+		{
+			int offset = (i * 256 + j) * 4;
+
+			char value = perm[(j + perm[i]) & 0xFF];
+
+			pixels[offset] = grads[value & 0x0F][0] * 64 + 64;   // Gradient x
+			pixels[offset + 1] = grads[value & 0x0F][1] * 64 + 64; // Gradient y
+			pixels[offset + 2] = grads[value & 0x0F][2] * 64 + 64; // Gradient z
+			pixels[offset + 3] = value;                     // Permuted index
+		}
+	}
+
+	// GLFW texture loading functions won't work here - we need GL_NEAREST lookup.
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 256, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+}
+*/
+
+void generate_terrain(geometry &geom, const texture &height_map, 
+	unsigned int width, unsigned int depth, float height_scale)
+{
+	// Contains our position, normal, tex_coordinate, texture weight and index data
 	vector<vec3> positions;
-	// Contains our normal data
 	vector<vec3> normals;
-	// Contains our texture coordinate data
 	vector<vec2> tex_coords;
-	// Contains our texture weights
 	vector<vec4> tex_weights;
-	// Contains our index data
 	vector<unsigned int> indices;
 
 	// Extract the texture data from the image
@@ -151,7 +194,7 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 	// Point to work on
 	vec3 point;
 
-	// Part 1 - Iterate through each point, calculate vertex and add to vector
+	// Iterate through each point, calculate vertex and add to vector
 	for (int x = 0; x < height_map.get_width(); x++)
 	{
 		// Calculate x position of point
@@ -159,10 +202,8 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 
 		for (int z = 0; z < height_map.get_height(); z++)
 		{
-			// *********************************
 			// Calculate z position of point
 			point.z = -(depth / 2.0f) + (depth_point * static_cast<float>(z));
-			// *********************************
 			// Y position based on red component of height map data
 			point.y = data[(z * height_map.get_width()) + x].y * height_scale;
 			// Add point to position data
@@ -170,7 +211,7 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 		}
 	}
 
-	// Part 1 - Add index data
+	// Add index data
 	for (unsigned int x = 0; x < height_map.get_width() - 1; x++)
 	{
 		for (unsigned int y = 0; y < height_map.get_height() - 1; y++)
@@ -178,27 +219,25 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 			// Get four corners of patch
 			unsigned int top_left = (y * height_map.get_width()) + x;
 			unsigned int top_right = (y * height_map.get_width()) + x + 1;
-			// *********************************
 			unsigned int bottom_left = ((y + 1) * height_map.get_width()) + x;
 			unsigned int bottom_right = ((y + 1) * height_map.get_height()) + x + 1;
-			// *********************************
+
 			// Push back indices for triangle 1 (tl,br,bl)
 			indices.push_back(top_left);
 			indices.push_back(bottom_right);
 			indices.push_back(bottom_left);
+
 			// Push back indices for triangle 2 (tl,tr,br)
-			// *********************************
 			indices.push_back(top_left);
 			indices.push_back(top_right);
 			indices.push_back(bottom_right);
-			// *********************************
 		}
 	}
 
 	// Resize the normals buffer
 	normals.resize(positions.size());
 
-	// Part 2 - Calculate normals for the height map
+	// Calculate normals for the height map
 	for (unsigned int i = 0; i < indices.size() / 3; i++)
 	{
 		// Get indices for the triangle
@@ -211,23 +250,21 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 		vec3 side2 = positions[idx1] - positions[idx2];
 
 		// Normal is normal(cross product) of these two sides
-		// *********************************
 		vec3 n = normalize(cross(side2, side1));
+
 		// Add to normals in the normal buffer using the indices for the triangle
 		normals[idx1] = normals[idx1] + n;
 		normals[idx2] = normals[idx2] + n;
 		normals[idx3] = normals[idx3] + n;
-		// *********************************
 	}
 
 	// Normalize all the normals
-	for (auto &n : normals) {
-		// *********************************
+	for (auto &n : normals) 
+	{
 		n = normalize(n);
-		// *********************************
 	}
 
-	// Part 3 - Add texture coordinates for geometry
+	// Add texture coordinates for geometry
 	for (unsigned int x = 0; x < height_map.get_width(); x++)
 	{
 		for (unsigned int z = 0; z < height_map.get_height(); z++)
@@ -236,7 +273,7 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 		}
 	}
 
-	// Part 4 - Calculate texture weights for each vertex
+	// Calculate texture weights for each vertex
 	for (unsigned int x = 0; x < height_map.get_width(); x++)
 	{
 		for (unsigned int z = 0; z < height_map.get_height(); z++)
@@ -247,14 +284,13 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 				clamp(1.0f - abs(data[(height_map.get_width() * z) + x].y - 0.5f) / 0.25f, 0.0f, 1.0f),
 				clamp(1.0f - abs(data[(height_map.get_width() * z) + x].y - 0.9f) / 0.25f, 0.0f, 1.0f));
 
-			// *********************************
 			// Sum the components of the vector
 			float total = tex_weight.x + tex_weight.y + tex_weight.z + tex_weight.a;
 			// Divide weight by sum
 			tex_weight = tex_weight / total;
 			// Add tex weight to weights
 			tex_weights.push_back(tex_weight);
-			// *********************************
+
 		}
 	}
 
@@ -271,6 +307,21 @@ void generate_terrain(geometry &geom, const texture &height_map, unsigned int wi
 
 bool load_content()
 {
+	// -=-=-=-=-=-=-=-=-=-=- PERLIN -=-=-=-=-=-=-=-=-=-=-=-
+
+	perlin = frame_buffer(512, 512);
+	// Create screen quad
+	vector<vec2> perl_positions{ vec2(-1.0f, -1.0f), vec2(1.0f, -1.0f), vec2(-1.0f, 1.0f), vec2(1.0f, 1.0f) };
+	vector<vec2> perl_tex_coords{ vec2(0.0f, 0.0f), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
+	perlin_quad.add_buffer(perl_positions, BUFFER_INDEXES::POSITION_BUFFER);
+	perlin_quad.add_buffer(perl_tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
+	perlin_quad.set_type(GL_TRIANGLE_STRIP);
+	perlin_quad.add_buffer(perl_positions, BUFFER_INDEXES::POSITION_BUFFER);
+	perlin_quad.add_buffer(perl_tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
+	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.vert", GL_VERTEX_SHADER);
+	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.frag", GL_FRAGMENT_SHADER);
+	perlin_eff.build();
+
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Create frame buffer - use screen width and height
@@ -278,7 +329,7 @@ bool load_content()
 	// Create screen quad
 	vector<vec3> positions{ vec3(-1.0f, -1.0f, 0.0f), vec3(1.0f, -1.0f, 0.0f), vec3(-1.0f, 1.0f, 0.0f),
 		vec3(1.0f, 1.0f, 0.0f) };
-	vector<vec2> tex_coords{ vec2(0.0, 0.0), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
+	vector<vec2> tex_coords{ vec2(0.0f, 0.0f), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
 	screen_quad.add_buffer(positions, BUFFER_INDEXES::POSITION_BUFFER);
 	screen_quad.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
 	screen_quad.set_type(GL_TRIANGLE_STRIP);
@@ -310,12 +361,17 @@ bool load_content()
 	extra_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
 	extra_eff.build();
 
+	// -=-=-=-=-=-=-=-=-=-=- Perlin sphere -=-=-=-=-=-=-=-=-=-=-=-
+
 	example_sphere = mesh(geometry_builder::create_sphere(20, 20));
 	example_sphere.get_transform().scale *= 2.0f;
 	example_sphere.get_transform().translate(vec3(-10.0f, 15.0f, -30.0f));
-	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.vert", GL_VERTEX_SHADER);;
-	example_sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/57_Skybox/shader.frag", GL_FRAGMENT_SHADER);
-	example_sphere_eff.build();
+
+	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.vert", GL_VERTEX_SHADER);;
+	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.frag", GL_FRAGMENT_SHADER);
+	sphere_eff.build();
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	
 	// Geometry to load into
 	geometry geom;
@@ -350,7 +406,7 @@ bool load_content()
 	// Set the clear colour
 	renderer::setClearColour(0.5f, 0.0f, 0.2f);
 
-	// terrian textures
+	// Terrian textures
 	tex[0] = texture("textures/sand.jpg");
 	tex[1] = texture("textures/grass.jpg");
 	tex[2] = texture("textures/stone.jpg");
@@ -422,6 +478,21 @@ bool update(float delta_time)
 
 bool render()
 {
+	auto V = cam.get_view();
+	auto P = cam.get_projection();
+
+	// -=-=-=-=-=-=-=-=-=-=- PERLIN -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	renderer::set_render_target(perlin);
+	renderer::bind(perlin_eff);
+	renderer::render(perlin_quad);
+
+	// -=-=-=-=-=-=-=-=-=-=- PERLIN SPHERE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
+	glUniformMatrix4fv(perlin_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
+	renderer::render(example_sphere);
+
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Set render target to frame buffer
@@ -431,12 +502,7 @@ bool render()
 
 	// RENDER ALL TO FRAME VVVV
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-	auto V = cam.get_view();
-	auto P = cam.get_projection();
-
-	// -=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	// Disable depth test, depth mask, face culling
 	glDisable(GL_DEPTH_TEST);
@@ -497,13 +563,6 @@ bool render()
 	
 	// Render terrain
 	renderer::render(terr);
-
-	// -=-=-=-=-=-=-=-=-=-=- Example sphere -=-=-=-=-=-=-=-=-=-=-=-
-
-	renderer::bind(example_sphere_eff);
-	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
-	glUniformMatrix4fv(example_sphere_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
-	renderer::render(example_sphere);
 
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
