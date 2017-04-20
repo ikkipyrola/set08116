@@ -4,9 +4,7 @@ TODO: Not rendering the sphere
 
 TODO: Continue noise
 
-
 */
-
 
 #include <glm/glm.hpp>
 #include <graphics_framework.h>
@@ -21,7 +19,11 @@ effect extra_eff;
 cubemap cube_map;
 vec3 fog_colour = vec3(0.5f, 0.0f, 0.2f);
 
+// Noise texture
+bool texture_not_rendered = true;
+GLenum noise_texture;
 
+//texture noise_texture;
 frame_buffer perlin;
 mesh example_sphere;
 effect sphere_eff;
@@ -38,7 +40,11 @@ effect glitch_eff;
 frame_buffer frame;
 geometry screen_quad;
 
-/*
+const int noise_width = 512;
+const int noise_height = noise_width;
+
+// Gradient data for texture
+float noise_data[noise_width * noise_height];
 
 // Hash lookup table as defined by Ken Perlin, all numbers from 0-255 inclusive.
 int static permutation[] = { 151,160,137,91,90,15,
@@ -58,6 +64,39 @@ int static permutation[] = { 151,160,137,91,90,15,
 
 // Doubled to avoid overflow
 int static p[512];
+
+void Perlin()
+{
+	for (int i = 0; i < 512; i++)
+	{
+		p[i] = permutation[i%256];
+	}
+
+}
+
+// Fade function as defined by Ken Perlin (6t^5 - 15t^4 + 10t^3)
+// Smooths final output by easing coordinate values towards integral values
+double fade(double t)
+{
+	return 6 * pow(t, 5) - 15 * pow(t, 4) + 10 * pow(t, 3);
+}
+
+// Gradient vectors
+vec2 grads[] = { {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
+
+// (Same as grad in flafla code)
+double dot_prod(int i, double x, double y)
+{
+	return grads[i][0] * x + grads[i][1] * y;
+}
+
+// fade value, dot_prod, dot_prod
+double double_lerp (double t, double a, double b)
+{
+	return a + t * (b - a);
+}
+
+/*
 
 void Perlin()
 {
@@ -84,19 +123,17 @@ double dot_prod(int i, double x, double y)
 return grads[i][0] * x + grads[i][1] * y;
 }
 
-// fade, dot_prod, dot_prod
+// fade value, dot_prod, dot_prod
 double double_lerp (double t, double a, double b)
 {
 return a + t * (b - a);
 }
 
-double generate_perlin(double x, double y, double z)
+double generate_perlin(double x, double y)
 {
 // Calculate unit coordinates
 int unit_x = (int)floor(x);
 int unit_y = (int)floor(y);
-//int unit_x1 = (int)floor(x + 1.0);
-//int unit_y2 = (int)floor(y + 1.0);
 
 // Location 0.0 to 1.0 within unit square
 double relative_x = x - floor(x);
@@ -105,35 +142,63 @@ double relative_y = y - floor(y);
 double u = fade(relative_x);
 double v = fade(relative_y);
 
-// using unit coordinate, lookup a gradient
-int aa, ab, ba, bb;
-aa = p[unit_x +     p[unit_y    ]];
-ab = p[unit_x +     p[unit_y + 1]];
-ba = p[unit_x + 1 + p[unit_y    ]];
-bb = p[unit_x + 1 + p[unit_y + 1]];
-
-
-//"PUTTING IT ALL TOGETHER" HERE
-
-// EXAMPLE USE OF DOT PROD
-// double dot_x = dot_prod(aa & 7, relative_x, relative_y);
-// double dot_y = dot_prod(bb & 7, relative_x, relative_y);
+// Using unit coordinate, lookup a gradient
+int oo, ol, lo, ll;
+oo = p[unit_x +     p[unit_y    ]];
+ol = p[unit_x +     p[unit_y + 1]];
+lo = p[unit_x + 1 + p[unit_y    ]];
+ll = p[unit_x + 1 + p[unit_y + 1]];
 
 // Values to interpolate between
 double lerping_xa, lerping_ya, lerping_xb, lerping_yb;
-lerping_xa = dot_prod(aa, relative_x, relative_y);
-lerping_xb = dot_prod(ab, relative_x - 1, relative_y);
-lerping_ya = dot_prod(bb, relative_x, relative_y - 1);
-lerping_yb = dot_prod(ba, relative_x - 1, relative_y - 1);
+lerping_xa = dot_prod(oo, relative_x, relative_y);
+lerping_xb = dot_prod(ol, relative_x - 1, relative_y);
+lerping_ya = dot_prod(ll, relative_x, relative_y - 1);
+lerping_yb = dot_prod(lo, relative_x - 1, relative_y - 1);
 
-// linear interpolation
-double y1 = double_lerp(u, aa, ba),
-double y2 = double_lerp(u, ab, bb);
+// Linear interpolation
+double y1 = double_lerp(u, oo, lo),
+double y2 = double_lerp(u, ol, ll);
 
 return double_lerp(v, y1, y2);
 }
 
 */
+
+float generate_perlin(double x, double y)
+{
+	// Calculate unit coordinates
+	int unit_x = (int)floor(x);
+	int unit_y = (int)floor(y);
+
+	// Location 0.0 to 1.0 within unit square
+	double relative_x = x - floor(x);
+	double relative_y = y - floor(y);
+
+	// Apply fade function
+	double u = fade(relative_x);
+	double v = fade(relative_y);
+
+	// Using unit coordinate, lookup a gradient
+	int oo, ol, lo, ll;
+	oo = p[unit_x +     p[unit_y    ]];
+	ol = p[unit_x +     p[unit_y + 1]];
+	lo = p[unit_x + 1 + p[unit_y    ]];
+	ll = p[unit_x + 1 + p[unit_y + 1]];
+
+	// Values to interpolate between
+	double lerping_xa, lerping_ya, lerping_xb, lerping_yb;
+	lerping_xa = dot_prod(oo, relative_x, relative_y);
+	lerping_xb = dot_prod(ol, relative_x - 1, relative_y);
+	lerping_ya = dot_prod(ll, relative_x, relative_y - 1);
+	lerping_yb = dot_prod(lo, relative_x - 1, relative_y - 1);
+
+	// Linear interpolation
+	double y1 = double_lerp(u, oo, lo);
+	double y2 = double_lerp(u, ol, ll);
+
+	return (float)double_lerp(v, y1, y2);
+}
 
 /*
 // initPermTexture(GLuint *texID) - create and load a 2D texture for
@@ -309,7 +374,8 @@ bool load_content()
 {
 	// -=-=-=-=-=-=-=-=-=-=- PERLIN -=-=-=-=-=-=-=-=-=-=-=-
 
-	perlin = frame_buffer(512, 512);
+	// MAYBE GET RID OF ALL THIS
+	perlin = frame_buffer(noise_width, noise_height);
 	// Create screen quad
 	vector<vec2> perl_positions{ vec2(-1.0f, -1.0f), vec2(1.0f, -1.0f), vec2(-1.0f, 1.0f), vec2(1.0f, 1.0f) };
 	vector<vec2> perl_tex_coords{ vec2(0.0f, 0.0f), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
@@ -321,6 +387,28 @@ bool load_content()
 	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.vert", GL_VERTEX_SHADER);
 	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.frag", GL_FRAGMENT_SHADER);
 	perlin_eff.build();
+
+	for (int i = 0; i < noise_height; i++)
+	{
+		for (int j = 0; j < noise_width; j++)
+		{
+			// HACKY WAY OF GETTING AROUND HAVING INT FOR ALL PIXELS
+			// TODO: ALL NOISE DATA IS ZERO, DEBUG THIS FUCKER
+			if (j >= 10 && i >= 10)
+			{
+				noise_data[noise_height + noise_width] = generate_perlin((double)(i / 10), (double)(j / 10));
+			}
+			else if (j >= 10)
+			{
+				noise_data[noise_height + noise_width] = generate_perlin((double)(i), (double)(j / 10));
+			}
+			else
+			{
+				noise_data[noise_height + noise_width] = generate_perlin((double)(i), (double)(j));
+			}
+			
+		}
+	}
 
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
@@ -367,7 +455,7 @@ bool load_content()
 	example_sphere.get_transform().scale *= 2.0f;
 	example_sphere.get_transform().translate(vec3(-10.0f, 15.0f, -30.0f));
 
-	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.vert", GL_VERTEX_SHADER);;
+	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.vert", GL_VERTEX_SHADER);
 	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.frag", GL_FRAGMENT_SHADER);
 	sphere_eff.build();
 
@@ -487,12 +575,6 @@ bool render()
 	renderer::bind(perlin_eff);
 	renderer::render(perlin_quad);
 
-	// -=-=-=-=-=-=-=-=-=-=- PERLIN SPHERE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
-	glUniformMatrix4fv(perlin_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
-	renderer::render(example_sphere);
-
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Set render target to frame buffer
@@ -524,6 +606,29 @@ bool render()
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE);
 	glEnable(GL_CULL_FACE);
+
+	// -=-=-=-=-=-=-=-=-=-=- PERLIN SPHERE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	renderer::bind(sphere_eff);
+	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
+	glUniformMatrix4fv(sphere_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
+
+	if (texture_not_rendered)
+	{
+		glGenTextures(1, &noise_texture);
+	}
+
+	glBindTexture(GL_TEXTURE_2D, noise_texture);
+
+	if (texture_not_rendered)
+	{
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_COLOR_INDEX, GL_FLOAT, noise_data);
+		texture_not_rendered = false;
+	}
+
+	glUniform1i(sphere_eff.get_uniform_location("tex"), noise_texture);
+
+	renderer::render(example_sphere);
 
 	// -=-=-=-=-=-=-=-=-=-=- Terrain -=-=-=-=-=-=-=-=-=-=-=-
 
