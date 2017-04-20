@@ -21,7 +21,7 @@ vec3 fog_colour = vec3(0.5f, 0.0f, 0.2f);
 
 // Noise texture
 bool texture_not_rendered = true;
-GLenum noise_texture;
+GLuint noise_texture;
 
 //texture noise_texture;
 frame_buffer perlin;
@@ -46,8 +46,61 @@ const int noise_height = noise_width;
 // Gradient data for texture
 float noise_data[noise_width * noise_height];
 
+/*
+
+// Function to linearly interpolate between a0 and a1
+// Weight w should be in the range [0.0, 1.0]
+function lerp(float a0, float a1, float w) {
+return (1.0 - w)*a0 + w*a1;
+}
+
+// Computes the dot product of the distance and gradient vectors.
+function dotGridGradient(int ix, int iy, float x, float y) {
+
+// Precomputed (or otherwise) gradient vectors at each grid node
+extern float Gradient[IYMAX][IXMAX][2];
+
+// Compute the distance vector
+float dx = x - (float)ix;
+float dy = y - (float)iy;
+
+// Compute the dot-product
+return (dx*Gradient[iy][ix][0] + dy*Gradient[iy][ix][1]);
+}
+
+// -=-=-=-=-= PERLIN FUNCTION =-=-=-=-=-=-
+// Compute Perlin noise at coordinates x, y
+function perlin(float x, float y) 
+{
+
+// Determine grid cell coordinates
+int x0 = floor(x);
+int x1 = x0 + 1;
+int y0 = floor(y);
+int y1 = y0 + 1;
+
+// Determine interpolation weights
+// Could also use higher order polynomial/s-curve here
+float sx = x - (float)x0;
+float sy = y - (float)y0;
+
+// Interpolate between grid point gradients
+float n0, n1, ix0, ix1, value;
+n0 = dotGridGradient(x0, y0, x, y);
+n1 = dotGridGradient(x1, y0, x, y);
+ix0 = lerp(n0, n1, sx);
+n0 = dotGridGradient(x0, y1, x, y);
+n1 = dotGridGradient(x1, y1, x, y);
+ix1 = lerp(n0, n1, sx);
+value = lerp(ix0, ix1, sy);
+
+return value;
+}
+
+*/
+
 // Hash lookup table as defined by Ken Perlin, all numbers from 0-255 inclusive.
-int static permutation[] = { 151,160,137,91,90,15,
+int static look_up_table[] = { 151,160,137,91,90,15,
 131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
 190, 6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,
 88,237,149,56,87,174,20,125,136,171,168, 68,175,74,165,71,134,139,48,27,166,
@@ -65,35 +118,34 @@ int static permutation[] = { 151,160,137,91,90,15,
 // Doubled to avoid overflow
 int static p[512];
 
-void Perlin()
+void gen_p()
 {
 	for (int i = 0; i < 512; i++)
 	{
-		p[i] = permutation[i%256];
+		p[i] = look_up_table[i%256];
 	}
 
 }
 
 // Fade function as defined by Ken Perlin (6t^5 - 15t^4 + 10t^3)
 // Smooths final output by easing coordinate values towards integral values
-double fade(double t)
+float fade(float t)
 {
-	return 6 * pow(t, 5) - 15 * pow(t, 4) + 10 * pow(t, 3);
+	return (6.0f * pow(t, 5.0f)) - (15.0f * pow(t, 4.0f)) + (10.0f * pow(t, 3.0f));
 }
 
-// Gradient vectors
+// Gradient vectors - NOT RANDOM SO USING SIMPLEX 
 vec2 grads[] = { {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1} };
 
-// (Same as grad in flafla code)
-double dot_prod(int i, double x, double y)
+float dot_prod(int i, float x, float y)
 {
 	return grads[i][0] * x + grads[i][1] * y;
 }
 
 // fade value, dot_prod, dot_prod
-double double_lerp (double t, double a, double b)
+float float_lerp (float a, float b, float x)
 {
-	return a + t * (b - a);
+	return abs(a + x * (b - a));
 }
 
 /*
@@ -165,39 +217,40 @@ return double_lerp(v, y1, y2);
 
 */
 
-float generate_perlin(double x, double y)
+float generate_perlin(float x, float y)
 {
-	// Calculate unit coordinates
+	// Calculate unit lattice coordinates
 	int unit_x = (int)floor(x);
 	int unit_y = (int)floor(y);
 
+	// Determine interpolation weights=-=-=-=-=
 	// Location 0.0 to 1.0 within unit square
-	double relative_x = x - floor(x);
-	double relative_y = y - floor(y);
-
+	float distance_vec_x = x - floor(x);
+	float distance_vec_y = y - floor(y);
 	// Apply fade function
-	double u = fade(relative_x);
-	double v = fade(relative_y);
+	float u = fade(distance_vec_x);
+	float v = fade(distance_vec_y);
+	// =-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=
 
-	// Using unit coordinate, lookup a gradient
+	// Using unit coordinate get gradients
 	int oo, ol, lo, ll;
-	oo = p[unit_x +     p[unit_y    ]];
-	ol = p[unit_x +     p[unit_y + 1]];
+	oo = p[unit_x +		p[unit_y    ]];
+	ol = p[unit_x +		p[unit_y + 1]];
 	lo = p[unit_x + 1 + p[unit_y    ]];
 	ll = p[unit_x + 1 + p[unit_y + 1]];
 
-	// Values to interpolate between
-	double lerping_xa, lerping_ya, lerping_xb, lerping_yb;
-	lerping_xa = dot_prod(oo, relative_x, relative_y);
-	lerping_xb = dot_prod(ol, relative_x - 1, relative_y);
-	lerping_ya = dot_prod(ll, relative_x, relative_y - 1);
-	lerping_yb = dot_prod(lo, relative_x - 1, relative_y - 1);
+	// Values to interpolate between, influence of corners
+	float influence_xa, influence_ya, influence_xb, influence_yb;
+	influence_xa = dot_prod(oo % 8, distance_vec_x, distance_vec_y);
+	influence_xb = dot_prod(ol % 8, distance_vec_x, distance_vec_y);
+	influence_ya = dot_prod(ll % 8, distance_vec_x, distance_vec_y);
+	influence_yb = dot_prod(lo % 8, distance_vec_x, distance_vec_y);
 
 	// Linear interpolation
-	double y1 = double_lerp(u, oo, lo);
-	double y2 = double_lerp(u, ol, ll);
+	float y1 = float_lerp(u, influence_xa, influence_ya);
+	float y2 = float_lerp(u, influence_xb, influence_yb);
 
-	return (float)double_lerp(v, y1, y2);
+	return float_lerp(v, y1, y2);
 }
 
 /*
@@ -373,6 +426,8 @@ void generate_terrain(geometry &geom, const texture &height_map,
 bool load_content()
 {
 	// -=-=-=-=-=-=-=-=-=-=- PERLIN -=-=-=-=-=-=-=-=-=-=-=-
+	
+	gen_p();
 
 	// MAYBE GET RID OF ALL THIS
 	perlin = frame_buffer(noise_width, noise_height);
@@ -392,24 +447,11 @@ bool load_content()
 	{
 		for (int j = 0; j < noise_width; j++)
 		{
-			// HACKY WAY OF GETTING AROUND HAVING INT FOR ALL PIXELS
-			// TODO: ALL NOISE DATA IS ZERO, DEBUG THIS FUCKER
-			if (j >= 10 && i >= 10)
-			{
-				noise_data[noise_height + noise_width] = generate_perlin((double)(i / 10), (double)(j / 10));
-			}
-			else if (j >= 10)
-			{
-				noise_data[noise_height + noise_width] = generate_perlin((double)(i), (double)(j / 10));
-			}
-			else
-			{
-				noise_data[noise_height + noise_width] = generate_perlin((double)(i), (double)(j));
-			}
-			
+			// Divided by 8 so 512 has 64
+			noise_data[i + j] = generate_perlin(((float)i)/8.0f, ((float)j)/8.0f);
 		}
 	}
-
+ 
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Create frame buffer - use screen width and height
@@ -427,7 +469,7 @@ bool load_content()
 	glitch_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/glitch.frag", GL_FRAGMENT_SHADER);
 	glitch_eff.build();
 
-	// -=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	// Create box geometry for skybox
 	skybox = mesh(geometry_builder::create_box(vec3(1.0f, 1.0f, 1.0f)));
@@ -546,6 +588,7 @@ bool update(float delta_time)
 	{
 		translation.x += 5.0f * delta_time;
 	}
+
 	// Move camera
 	cam.move(translation);
 
@@ -569,13 +612,7 @@ bool render()
 	auto V = cam.get_view();
 	auto P = cam.get_projection();
 
-	// -=-=-=-=-=-=-=-=-=-=- PERLIN -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-	renderer::set_render_target(perlin);
-	renderer::bind(perlin_eff);
-	renderer::render(perlin_quad);
-
-	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Set render target to frame buffer
 	renderer::set_render_target(frame);
@@ -584,7 +621,7 @@ bool render()
 
 	// RENDER ALL TO FRAME VVVV
 
-	// -=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- SKYBOX -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	// Disable depth test, depth mask, face culling
 	glDisable(GL_DEPTH_TEST);
@@ -607,7 +644,7 @@ bool render()
 	glDepthMask(GL_TRUE);
 	glEnable(GL_CULL_FACE);
 
-	// -=-=-=-=-=-=-=-=-=-=- PERLIN SPHERE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- PERLIN SPHERE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	renderer::bind(sphere_eff);
 	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
@@ -616,21 +653,25 @@ bool render()
 	if (texture_not_rendered)
 	{
 		glGenTextures(1, &noise_texture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	}
-
+	glActiveTexture(noise_texture);
 	glBindTexture(GL_TEXTURE_2D, noise_texture);
 
 	if (texture_not_rendered)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_COLOR_INDEX, GL_FLOAT, noise_data);
+		//glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, width, height, 0, GL_LUMINANCE, GL_FLOAT, data);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_RED, GL_FLOAT, noise_data);
 		texture_not_rendered = false;
 	}
 
 	glUniform1i(sphere_eff.get_uniform_location("tex"), noise_texture);
-
 	renderer::render(example_sphere);
 
-	// -=-=-=-=-=-=-=-=-=-=- Terrain -=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- TERRAIN -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 	// Bind effect
 	renderer::bind(eff);
