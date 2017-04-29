@@ -22,6 +22,11 @@ vec3 fog_colour = vec3(0.5f, 0.0f, 0.2f);
 // Noise texture
 bool texture_not_rendered = true;
 GLuint noise_texture;
+const int noise_width = 512;
+const int noise_height = noise_width;
+// Gradient data for texture
+//GLfloat noise_data[noise_height][noise_width];
+GLfloat noise_data[noise_height * noise_width];
 
 //texture noise_texture;
 frame_buffer perlin;
@@ -37,14 +42,10 @@ directional_light light;
 texture tex[4];
 
 effect glitch_eff;
-frame_buffer frame;
+effect invert_colour;
+frame_buffer first_frame;
+frame_buffer second_frame;
 geometry screen_quad;
-
-const int noise_width = 512;
-const int noise_height = noise_width;
-
-// Gradient data for texture
-float noise_data[noise_width * noise_height];
 
 /*
 
@@ -241,10 +242,10 @@ float generate_perlin(float x, float y)
 
 	// Values to interpolate between, influence of corners
 	float influence_xa, influence_ya, influence_xb, influence_yb;
-	influence_xa = dot_prod(oo % 8, distance_vec_x, distance_vec_y);
-	influence_xb = dot_prod(ol % 8, distance_vec_x, distance_vec_y);
-	influence_ya = dot_prod(ll % 8, distance_vec_x, distance_vec_y);
-	influence_yb = dot_prod(lo % 8, distance_vec_x, distance_vec_y);
+	influence_xa = dot_prod(oo / 256, distance_vec_x, distance_vec_y);
+	influence_xb = dot_prod(ol / 256, distance_vec_x, distance_vec_y);
+	influence_ya = dot_prod(ll / 256, distance_vec_x, distance_vec_y);
+	influence_yb = dot_prod(lo / 256, distance_vec_x, distance_vec_y);
 
 	// Linear interpolation
 	float y1 = float_lerp(u, influence_xa, influence_ya);
@@ -429,33 +430,52 @@ bool load_content()
 	
 	gen_p();
 
-	// MAYBE GET RID OF ALL THIS
-	perlin = frame_buffer(noise_width, noise_height);
-	// Create screen quad
-	vector<vec2> perl_positions{ vec2(-1.0f, -1.0f), vec2(1.0f, -1.0f), vec2(-1.0f, 1.0f), vec2(1.0f, 1.0f) };
-	vector<vec2> perl_tex_coords{ vec2(0.0f, 0.0f), vec2(1.0f, 0.0f), vec2(0.0f, 1.0f), vec2(1.0f, 1.0f) };
-	perlin_quad.add_buffer(perl_positions, BUFFER_INDEXES::POSITION_BUFFER);
-	perlin_quad.add_buffer(perl_tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
-	perlin_quad.set_type(GL_TRIANGLE_STRIP);
-	perlin_quad.add_buffer(perl_positions, BUFFER_INDEXES::POSITION_BUFFER);
-	perlin_quad.add_buffer(perl_tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
 	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.vert", GL_VERTEX_SHADER);
 	perlin_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/perlin.frag", GL_FRAGMENT_SHADER);
 	perlin_eff.build();
 
+	float lattice_x, lattice_y = 0.0f;
+
+	int acc = 0;
 	for (int i = 0; i < noise_height; i++)
 	{
 		for (int j = 0; j < noise_width; j++)
 		{
-			// Divided by 8 so 512 has 64
-			noise_data[i + j] = generate_perlin(((float)i)/8.0f, ((float)j)/8.0f);
+			// Every 16th is a lattice unit point
+			noise_data[acc] = generate_perlin(((float)j)/16, ((float)i)/16);
+			acc++;
 		}
 	}
+
+
+	/*
+	TEST CHECKER
+	
+	int acc = 0;
+	for (int i = 0; i < 512; i++)
+	{
+		for (int j = 0; j < 512; j++)
+		{
+			if ((8 * i + j / 64) % 64)
+			{
+				noise_data[acc] = 1.0f;
+			}
+			else
+			{
+				noise_data[acc] = 0.0f;
+			}
+			acc++;
+		}
+	}
+	
+	*/
+
  
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
 	// Create frame buffer - use screen width and height
-	frame = frame_buffer(renderer::get_screen_width(), renderer::get_screen_height());
+	first_frame = frame_buffer(renderer::get_screen_width(), renderer::get_screen_height());
+	second_frame = frame_buffer(renderer::get_screen_width(), renderer::get_screen_height());
 	// Create screen quad
 	vector<vec3> positions{ vec3(-1.0f, -1.0f, 0.0f), vec3(1.0f, -1.0f, 0.0f), vec3(-1.0f, 1.0f, 0.0f),
 		vec3(1.0f, 1.0f, 0.0f) };
@@ -465,9 +485,14 @@ bool load_content()
 	screen_quad.set_type(GL_TRIANGLE_STRIP);
 	screen_quad.add_buffer(positions, BUFFER_INDEXES::POSITION_BUFFER);
 	screen_quad.add_buffer(tex_coords, BUFFER_INDEXES::TEXTURE_COORDS_0);
+
 	glitch_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
 	glitch_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/glitch.frag", GL_FRAGMENT_SHADER);
 	glitch_eff.build();
+
+	invert_colour.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/27_Texturing_Shader/simple_texture.vert", GL_VERTEX_SHADER);
+	invert_colour.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/invert.frag", GL_FRAGMENT_SHADER);
+	invert_colour.build();
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=- Skybox -=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -499,7 +524,7 @@ bool load_content()
 
 	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.vert", GL_VERTEX_SHADER);
 	sphere_eff.add_shader("C:/Users/40212722/Desktop/set08116/labs/practicals/60_Terrain/basic_tex.frag", GL_FRAGMENT_SHADER);
-	sphere_eff.build();
+	sphere_eff.build(); 
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 	
@@ -607,19 +632,54 @@ bool update(float delta_time)
 	return true;
 }
 
+void post_glitch()
+{
+	// Set render target back to the screen
+	renderer::set_render_target();
+	// bind the tex effect
+	renderer::bind(glitch_eff);
+	// MVP is now the identity matrix
+	auto identity_MVP = mat4(1.0f);
+	// Set MVP matrix uniform
+	glUniformMatrix4fv(glitch_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(identity_MVP));
+	// Bind texture from frame buffer
+	renderer::bind(first_frame.get_frame(), 4);
+	// Set the tex uniform
+	glUniform1i(glitch_eff.get_uniform_location("tex"), 4);
+	// Render the screen quad
+	renderer::render(screen_quad);
+}
+
+void post_invert_colour()
+{
+	// Set render target back to the screen
+	renderer::set_render_target();
+	// bind the tex effect
+	renderer::bind(invert_colour);
+	// MVP is now the identity matrix
+	auto identity_MVP = mat4(1.0f);
+	// Set MVP matrix uniform
+	glUniformMatrix4fv(invert_colour.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(identity_MVP));
+	// Bind texture from frame buffer
+	renderer::bind(first_frame.get_frame(), 4);
+	// Set the tex uniform
+	glUniform1i(invert_colour.get_uniform_location("tex"), 4);
+	// Render the screen quad
+	renderer::render(screen_quad);
+}
+
 bool render()
 {
 	auto V = cam.get_view();
 	auto P = cam.get_projection();
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=- RENDER ALL TO FRAME -=-=-=-=-=-=-=-=-=-
 
 	// Set render target to frame buffer
-	renderer::set_render_target(frame);
+	renderer::set_render_target(first_frame);
 	// Clear frame
 	renderer::clear();
-
-	// RENDER ALL TO FRAME VVVV
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- SKYBOX -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -649,7 +709,7 @@ bool render()
 	renderer::bind(sphere_eff);
 	auto MVP_sphere = P * V * example_sphere.get_transform().get_transform_matrix();
 	glUniformMatrix4fv(sphere_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(MVP_sphere));
-
+	
 	if (texture_not_rendered)
 	{
 		glGenTextures(1, &noise_texture);
@@ -658,18 +718,24 @@ bool render()
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	}
-	glActiveTexture(noise_texture);
+
+	//glActiveTexture(noise_texture);
 	glBindTexture(GL_TEXTURE_2D, noise_texture);
 
 	if (texture_not_rendered)
 	{
-		//glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, width, height, 0, GL_LUMINANCE, GL_FLOAT, data);
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_RED, GL_FLOAT, noise_data);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_INTENSITY, noise_width, noise_height, 0, GL_LUMINANCE, GL_FLOAT, noise_data);
+		//glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_RED, GL_FLOAT, noise_data); // builds with this
+		//glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, noise_width, noise_height, 0, GL_RED, GL_FLOAT, noise_data);
+		//glTexStorage2D(GL_TEXTURE_2D, 1, GL_RED, noise_width, noise_height);
+		//glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, noise_width, noise_height, GL_RED, GL_FLOAT, noise_data);
 		texture_not_rendered = false;
 	}
 
 	glUniform1i(sphere_eff.get_uniform_location("tex"), noise_texture);
+
 	renderer::render(example_sphere);
+
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- TERRAIN -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -712,20 +778,8 @@ bool render()
 
 	// -=-=-=-=-=-=-=-=-=-=- Post-processing -=-=-=-=-=-=-=-=-=-=-=-
 
-	// Set render target back to the screen
-	renderer::set_render_target();
-	// bind the tex effect
-	renderer::bind(glitch_eff);
-	// MVP is now the identity matrix
-	auto identity_MVP = mat4(1.0f);
-	// Set MVP matrix uniform
-	glUniformMatrix4fv(glitch_eff.get_uniform_location("MVP"), 1, GL_FALSE, value_ptr(identity_MVP));
-	// Bind texture from frame buffer
-	renderer::bind(frame.get_frame(), 4);
-	// Set the tex uniform
-	glUniform1i(glitch_eff.get_uniform_location("tex"), 4);
-	// Render the screen quad
-	renderer::render(screen_quad);
+	post_glitch(); 
+	//post_invert_colour();
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

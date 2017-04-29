@@ -13,15 +13,5 @@ void main()
 {
 	vec4 tex_colour = texture(tex, tex_coord);
 
-	if(tex_colour.x > 0.8)
-	{
-		tex_colour *= 1.5;
-	}
-	
-	if(tex_colour.y > 0.8)
-	{
-		tex_colour *= 0.5;
-	}
-
-	colour = tex_colour;
+	colour = vec4(1.0 - tex_colour.x, 1.0 - tex_colour.y, 1.0 - tex_colour.z, 1.0);
 }
